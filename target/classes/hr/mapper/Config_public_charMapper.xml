@@ -37,5 +37,10 @@
 			select * from config_public_char WHERE NOT attribute_kind = '职称' AND NOT 
 			attribute_kind = '薪酬设置'
 		</select>
+		
+		<select id="selelctByAttributeKind" parameterType="java.lang.String" 
+		resultType="Config_public_char">
+			select * from config_public_char where attribute_kind = #{attributeKind}
+		</select>
   		
   </mapper>

@@ -44,5 +44,10 @@ public class ConfigMajorServiceImpl implements ConfigMajorService{
 		int max = mapper.selectConfigMajorMaxId();
 		return max;
 	}
+	
+	public List<ConfigMajor> queryConfigMajorByKindId(String kindId){
+		return mapper.selectConfigMajorByKindId(kindId);
+	}
+
 
 }

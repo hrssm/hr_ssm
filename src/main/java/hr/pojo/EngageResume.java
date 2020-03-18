@@ -3,7 +3,7 @@ package hr.pojo;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class EngageResume implements Serializable{
+public class EngageResume implements Serializable {
 	  private int res_id;				//id
 	  private String human_name;		//应聘人员名字
 	  private String engage_type;		//招聘类型
@@ -35,7 +35,7 @@ public class EngageResume implements Serializable{
 	  private double demand_salary_standard;//需求工资标准
 	  private String human_history_records;			//往年职业经验
 	  private String remark;								//评论
-	  private String recomandation;					//求职介绍信
+	  private String recomandation;	//求职介绍信
 	  private String human_picture;		//图片
 	  private String attachment_name;	//附件名
 	  private String check_status;		//审核状态

@@ -34,4 +34,9 @@
 	<select id="selectConfigMajorMaxId" resultType="_int">
 		select max(mak_id) from config_major
 	</select>
+	
+	<select id="selectConfigMajorByKindId" parameterType="java.lang.String" resultType="ConfigMajor">
+		select * from config_major 
+		where major_kind_id = #{kindId}; 
+	</select>
 </mapper>

@@ -1,14 +1,18 @@
 package hr.pojo;
 
 import java.io.Serializable;
-
+/**
+ * 职位
+ * @author xyw
+ *
+ */
 public class ConfigMajor implements Serializable{
-	private int mak_id;
-	private String major_kind_id;
-	private String major_kind_name;
-	private String major_id;
-	private String major_name;
-	private int test_amount;
+	private int mak_id;//部门_职位id
+	private String major_kind_id;//部门id
+	private String major_kind_name;//部门名称
+	private String major_id;//职位id
+	private String major_name;//职位名称
+	private int test_amount;//测试量
 	public int getMak_id() {
 		return mak_id;
 	}

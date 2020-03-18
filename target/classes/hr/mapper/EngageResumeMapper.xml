@@ -122,7 +122,7 @@
 				    human_address = #{human_address} ,	 
 				    human_postcode = #{human_postcode},	 
 				    human_major_kind_id = #{human_major_kind_id},	 
-				    human_major_kind_name = #{human_major_kind_name}, 
+				    human_major_kind_name = #{human_major_kind_name},
 				    human_major_id = #{human_major_id},	
 				    human_major_name = #{human_major_name}, 
 				    human_telephone = #{human_telephone},	 
@@ -176,5 +176,36 @@
 	  
 	  <select id="selectAllEngageResume" resultType="EngageResume">
 	  		select * from engage_resume
+	  </select>
+	  <select id="selectEngageResumeByConditions" resultType="EngageResume" parameterType="hashmap">
+	  		select * from engage_resume
+	  		<where>
+	  			<if test="checkstatus != null">
+	  				and check_status = #{checkstatus}
+	  			</if>
+	  		
+	  			<if test="humanmajorkindname != null">
+	  				and human_major_kind_name = #{humanmajorkindname}
+	  			</if>
+	  			
+	  			<if test="humanmajorname != null">
+	  				and human_major_name = #{humanmajorname}
+	  			</if>
+	  			
+	  			<if test="startdate != null">
+	  				and regist_time <![CDATA[>=]]> #{startdate}
+	  			</if>
+	  			
+	  			<if test="enddate != null">
+	  				and regist_time <![CDATA[<=]]> #{enddate}
+	  			</if>
+	  			<if test="primarkey != null">
+	  				 <bind name="pattern" value="'%' + primarkey + '%'" />
+	  				 <foreach collection="cpks" open=" " item="item" separator=" " close=" ">
+						or ${item.primary_key} like #{pattern}
+					</foreach>
+	  			</if>
+	  		</where>
+	  		order by res_id
 	  </select>
   </mapper>

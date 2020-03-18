@@ -11,4 +11,5 @@ public interface ConfigMajorService {
 	public ConfigMajor queryConfigMajorById(int id);
 	public List<ConfigMajor> queryConfigMajor();
 	public int queryConfigMajorMaxId();
+	public List<ConfigMajor> queryConfigMajorByKindId(String kindId);
 }

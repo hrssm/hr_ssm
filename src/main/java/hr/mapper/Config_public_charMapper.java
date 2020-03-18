@@ -16,4 +16,6 @@ public interface Config_public_charMapper {
 	public int selectConfig_public_charMaxId();
 	public List<Config_public_char> selectConfig_public_charKind();
 	public List<Config_public_char> selectNotConfig_public_charKind();
+	
+	public List<Config_public_char> selelctByAttributeKind(String attributeKind);
 }

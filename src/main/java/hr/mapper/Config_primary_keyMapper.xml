@@ -22,6 +22,11 @@
   			select * from config_primary_key
   		</select>
   		
+  		<select id="getConfig_primary_key_byPk" parameterType ="java.lang.String" resultType="Config_primary_key">
+  			select * from config_primary_key
+  			where primary_key_table = #{pk}
+  		</select>
+  		
   		<delete id="deleteConfig_primary_keyById" parameterType="_int">
   			delete from config_primary_key where prk_id = #{id}
   		</delete>

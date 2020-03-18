@@ -14,4 +14,5 @@ public interface ConfigMajorMapper {
 	public ConfigMajor selectConfigMajorById(int id);
 	public List<ConfigMajor> selectConfigMajor();
 	public int selectConfigMajorMaxId();
+	public List<ConfigMajor> selectConfigMajorByKindId(String kindId);
 }

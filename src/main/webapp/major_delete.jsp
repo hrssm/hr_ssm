@@ -10,8 +10,8 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<link rel="stylesheet" href="table.css" type="text/css">
-<script type="text/javascript" src="javascript/comm/comm.js"></script>
+<link rel="stylesheet" href="/hr_ssm/table.css" type="text/css">
+<script type="text/javascript" src="/hr_ssm/javascript/comm/comm.js"></script>
 </head>
 <body>
 	<form method="post" action="configMajorController/remove.do?mak_id=${ConfigMajor.mak_id }">

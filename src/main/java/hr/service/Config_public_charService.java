@@ -13,4 +13,7 @@ public interface Config_public_charService {
 	public int queryConfig_public_charMaxId();
 	public List<Config_public_char> queryConfig_public_charKind();
 	public List<Config_public_char> queryNotConfig_public_charKind();
+	
+	public List<Config_public_char> queryByAttributeKind(String attributeKind);
+
 }

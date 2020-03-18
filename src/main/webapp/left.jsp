@@ -449,17 +449,17 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagemajorrelease.do?operate=toAdd"
+												href="position_register.jsp"
 												target="mainFrame">职位发布登记</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="engagemajorrelease.do?operate=toEdit"
+											<td><a href="engagemajorrelease/initEdit.do"
 												target="mainFrame">职位发布变更</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="engagemajorrelease.do?operate=list"
+											<td><a href="engagemajorrelease/queryAll.do"
 												target="mainFrame">职位发布查询</a></td>
 										</tr>
 									</table>
@@ -479,19 +479,19 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%"><a href="engageresume.do?operate=toAdd"
+											<td width="98%"><a href="resume-register.jsp"
 												target="mainFrame">简历登记</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
 											<td><a
-												href="engageresume.do?operate=locate&method=check"
+												href="engageresume/choose.do"
 												target="mainFrame">简历筛选</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
 											<td><a
-												href="engageresume.do?operate=locate&method=query"
+												href="engageresume/validlist.do"
 												target="mainFrame">有效简历查询</a></td>
 										</tr>
 									</table>

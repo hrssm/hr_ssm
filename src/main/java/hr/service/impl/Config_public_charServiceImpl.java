@@ -53,4 +53,9 @@ public class Config_public_charServiceImpl implements Config_public_charService{
 	public List<Config_public_char> queryNotConfig_public_charKind() {
 		return mapper.selectNotConfig_public_charKind();
 	}
+
+	@Override
+	public List<Config_public_char> queryByAttributeKind(String attributeKind) {
+		return mapper.selelctByAttributeKind(attributeKind);
+	}
 }

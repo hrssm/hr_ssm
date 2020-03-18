@@ -1,11 +1,15 @@
 package hr.pojo;
 
 import java.io.Serializable;
-
+/**
+  *  部门
+ * @author xyw
+ *
+ */
 public class ConfigMajorKind implements Serializable{
-	private int mfk_id;
-	private String major_kind_id;
-	private String major_kind_name;
+	private int mfk_id;//id
+	private String major_kind_id;//部门id
+	private String major_kind_name;//部门名称
 	public int getMfk_id() {
 		return mfk_id;
 	}

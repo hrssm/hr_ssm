@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 //职位缺省信息表 
 public class Engage_major_release implements Serializable{
 	private Integer mre_id;//id
-	private char first_kind_id;//一级种类id
+	private String first_kind_id;//一级种类id
 	private String first_kind_name;//一级种类名称
 	private Integer second_kind_id;//二级种类id
 	private String second_kind_name;//二级种类名称
@@ -13,7 +13,7 @@ public class Engage_major_release implements Serializable{
 	private String third_kind_name;//三级种类名称
 	private Integer major_kind_id;//部门id
 	private String major_kind_name;//部门名称
-	private char major_id;//职位id
+	private String major_id;//职位id
 	private String major_name;//职位名称
 	private Integer human_amount;//需要职工数
 	private String engage_type;//应聘类型
@@ -30,10 +30,10 @@ public class Engage_major_release implements Serializable{
 	public void setMre_id(Integer mre_id) {
 		this.mre_id = mre_id;
 	}
-	public char getFirst_kind_id() {
+	public String getFirst_kind_id() {
 		return first_kind_id;
 	}
-	public void setFirst_kind_id(char first_kind_id) {
+	public void setFirst_kind_id(String first_kind_id) {
 		this.first_kind_id = first_kind_id;
 	}
 	public String getFirst_kind_name() {
@@ -78,10 +78,10 @@ public class Engage_major_release implements Serializable{
 	public void setMajor_kind_name(String major_kind_name) {
 		this.major_kind_name = major_kind_name;
 	}
-	public char getMajor_id() {
+	public String getMajor_id() {
 		return major_id;
 	}
-	public void setMajor_id(char major_id) {
+	public void setMajor_id(String major_id) {
 		this.major_id = major_id;
 	}
 	public String getMajor_name() {
@@ -144,7 +144,4 @@ public class Engage_major_release implements Serializable{
 	public void setEngage_required(String engage_required) {
 		this.engage_required = engage_required;
 	}
-	
-	
-	
 }

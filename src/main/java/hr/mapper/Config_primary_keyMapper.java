@@ -13,4 +13,6 @@ public interface Config_primary_keyMapper {
 	public Config_primary_key selectConfig_primary_keyById(int id);
 	public List<Config_primary_key> getConfig_primary_key();
 	public boolean deleteConfig_primary_keyById(int sid);
+	
+	public List<Config_primary_key> getConfig_primary_key_byPk(String pk);
 }
