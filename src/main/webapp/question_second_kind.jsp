@@ -114,9 +114,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</table>
 			<p>&nbsp;&nbsp;总数：1例 &nbsp;&nbsp;&nbsp;当前第 1 页  &nbsp;&nbsp;&nbsp;共 1 页  &nbsp;&nbsp;&nbsp;跳到第 <input name=page type=text class=input1 size=1> 页&nbsp;&nbsp;<input type=image src="images/go.bmp" width=18 height=18 border=0>
 		</form>
-		<a href = "configQuestionSecondKind/selectAll.do"></a>
-		<form action="configQuestionSecondKind/selectAll.do" method="post">
-			<input type = "submit" value = "test">
-		</form>
 	</body>
 </html>

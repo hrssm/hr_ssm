@@ -65,7 +65,7 @@ public class HumanFileDig implements Serializable{
 	private Timestamp lastly_change_time;
 	private Timestamp delete_time;
 	private Timestamp recovery_time;
-	private boolean human_file_status;
+	private int human_file_status;
 	public int getHfd_id() {
 		return hfd_id;
 	}
@@ -432,10 +432,10 @@ public class HumanFileDig implements Serializable{
 	public void setRecovery_time(Timestamp recovery_time) {
 		this.recovery_time = recovery_time;
 	}
-	public boolean isHuman_file_status() {
+	public int getHuman_file_status() {
 		return human_file_status;
 	}
-	public void setHuman_file_status(boolean human_file_status) {
+	public void setHuman_file_status(int human_file_status) {
 		this.human_file_status = human_file_status;
 	}
 }

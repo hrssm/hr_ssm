@@ -12,4 +12,6 @@ public interface EngageResumeService {
 	public EngageResume queryEngageResumeById(int id);
 	public List<EngageResume> queryAllEngageResume();
 	public List<EngageResume> queryEngageResumeByConditions(HashMap<String,Object> map);
+
+	public List<EngageResume> queryEngageResumeByCondition(EngageResume engageResume);
 }

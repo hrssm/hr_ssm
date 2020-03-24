@@ -7,11 +7,11 @@ public class Salary_grant implements Serializable{
 	private Integer sgr_id;//id
 	private String salary_grant_id;//薪资补助id
 	private String salary_standard_id;//薪资标准id
-	private char first_kind_id;//一级机构种类id
+	private String first_kind_id;//一级机构种类id
 	private String first_kind_name;//一级机构种类名称
-	private char second_kind_id;//二级机构种类id
+	private String second_kind_id;//二级机构种类id
 	private String second_kind_name;//二级机构种类名称
-	private char third_kind_id;//三级机构种类id
+	private String third_kind_id;//三级机构种类id
 	private String third_kind_name;//三级机构种类名称
 	private Integer human_amount;//人员数量
 	private Double salary_standard_sum;//标准薪资总额
@@ -39,10 +39,10 @@ public class Salary_grant implements Serializable{
 	public void setSalary_standard_id(String salary_standard_id) {
 		this.salary_standard_id = salary_standard_id;
 	}
-	public char getFirst_kind_id() {
+	public String getFirst_kind_id() {
 		return first_kind_id;
 	}
-	public void setFirst_kind_id(char first_kind_id) {
+	public void setFirst_kind_id(String first_kind_id) {
 		this.first_kind_id = first_kind_id;
 	}
 	public String getFirst_kind_name() {
@@ -51,10 +51,10 @@ public class Salary_grant implements Serializable{
 	public void setFirst_kind_name(String first_kind_name) {
 		this.first_kind_name = first_kind_name;
 	}
-	public char getSecond_kind_id() {
+	public String getSecond_kind_id() {
 		return second_kind_id;
 	}
-	public void setSecond_kind_id(char second_kind_id) {
+	public void setSecond_kind_id(String second_kind_id) {
 		this.second_kind_id = second_kind_id;
 	}
 	public String getSecond_kind_name() {
@@ -63,10 +63,10 @@ public class Salary_grant implements Serializable{
 	public void setSecond_kind_name(String second_kind_name) {
 		this.second_kind_name = second_kind_name;
 	}
-	public char getThird_kind_id() {
+	public String getThird_kind_id() {
 		return third_kind_id;
 	}
-	public void setThird_kind_id(char third_kind_id) {
+	public void setThird_kind_id(String third_kind_id) {
 		this.third_kind_id = third_kind_id;
 	}
 	public String getThird_kind_name() {

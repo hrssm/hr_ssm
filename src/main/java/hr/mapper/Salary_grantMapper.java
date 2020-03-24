@@ -1,5 +1,6 @@
 package hr.mapper;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import hr.pojo.Salary_grant;
@@ -10,5 +11,6 @@ public interface Salary_grantMapper {
 	public Salary_grant selectSalary_grantById(int id);
 	public List<Salary_grant> getSalary_grant();
 	public boolean deleteSalary_grantById(int sid);
-
+	public Integer selectSalaryGrantCount();
+	public Timestamp selectSalaryGrantMaxTime();
 }

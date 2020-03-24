@@ -28,4 +28,11 @@
   			delete from salary_standard_details where sdt_id = #{id}
   		</delete>
   		
+  		<update id="updateSalaryStandardDetailsByItemID" parameterType="Salary_standard_details">
+  			update salary_standard_details set salary = #{salary} WHERE item_id = #{item_id} and standard_id = #{standard_id}
+  		</update>
+  		
+  		<select id="selectSalary_standard_detailsByStandardId" resultType="Salary_standard_details" parameterType="java.lang.String">
+  			select * from salary_standard_details where standard_id = #{sid}
+  		</select>
   </mapper>

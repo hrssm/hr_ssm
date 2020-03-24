@@ -65,7 +65,7 @@ public class HumanFile implements Serializable{
 	private Timestamp lastly_change_time;//最后修改时间
 	private Timestamp delete_time;//删除时间
 	private Timestamp recovery_time;//恢复时间
-	private boolean human_file_status;//文件状态
+	private int human_file_status;//文件状态
 	public int getHuf_id() {
 		return huf_id;
 	}
@@ -432,10 +432,40 @@ public class HumanFile implements Serializable{
 	public void setRecovery_time(Timestamp recovery_time) {
 		this.recovery_time = recovery_time;
 	}
-	public boolean isHuman_file_status() {
+	public int getHuman_file_status() {
 		return human_file_status;
 	}
-	public void setHuman_file_status(boolean human_file_status) {
+	public void setHuman_file_status(int human_file_status) {
 		this.human_file_status = human_file_status;
 	}
+	@Override
+	public String toString() {
+		return "HumanFile [huf_id=" + huf_id + ", human_id=" + human_id + ", first_kind_id=" + first_kind_id
+				+ ", first_kind_name=" + first_kind_name + ", second_kind_id=" + second_kind_id + ", second_kind_name="
+				+ second_kind_name + ", third_kind_id=" + third_kind_id + ", third_kind_name=" + third_kind_name
+				+ ", human_name=" + human_name + ", human_address=" + human_address + ", human_postcode="
+				+ human_postcode + ", human_pro_designation=" + human_pro_designation + ", human_major_kind_id="
+				+ human_major_kind_id + ", human_major_kind_name=" + human_major_kind_name + ", human_major_id="
+				+ human_major_id + ", hunma_major_name=" + hunma_major_name + ", human_telephone=" + human_telephone
+				+ ", human_mobilephone=" + human_mobilephone + ", human_bank=" + human_bank + ", human_account="
+				+ human_account + ", human_qq=" + human_qq + ", human_email=" + human_email + ", human_hobby="
+				+ human_hobby + ", human_speciality=" + human_speciality + ", human_sex=" + human_sex
+				+ ", human_religion=" + human_religion + ", human_party=" + human_party + ", human_nationality="
+				+ human_nationality + ", human_race=" + human_race + ", human_birthday=" + human_birthday
+				+ ", human_birthplace=" + human_birthplace + ", human_age=" + human_age + ", human_educated_degree="
+				+ human_educated_degree + ", human_educated_years=" + human_educated_years + ", human_educated_major="
+				+ human_educated_major + ", human_society_security_id=" + human_society_security_id + ", human_id_card="
+				+ human_id_card + ", remark=" + remark + ", salary_standard_id=" + salary_standard_id
+				+ ", salary_standard_name=" + salary_standard_name + ", salary_sum=" + salary_sum
+				+ ", demand_salaray_sum=" + demand_salaray_sum + ", paid_salary_sum=" + paid_salary_sum
+				+ ", major_change_amount=" + major_change_amount + ", bonus_amount=" + bonus_amount
+				+ ", training_amount=" + training_amount + ", file_chang_amount=" + file_chang_amount
+				+ ", human_histroy_records=" + human_histroy_records + ", human_family_membership="
+				+ human_family_membership + ", human_picture=" + human_picture + ", attachment_name=" + attachment_name
+				+ ", check_status=" + check_status + ", register=" + register + ", checker=" + checker + ", changer="
+				+ changer + ", regist_time=" + regist_time + ", check_time=" + check_time + ", change_time="
+				+ change_time + ", lastly_change_time=" + lastly_change_time + ", delete_time=" + delete_time
+				+ ", recovery_time=" + recovery_time + ", human_file_status=" + human_file_status + "]";
+	}
+	
 }

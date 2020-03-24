@@ -2,25 +2,26 @@ package hr.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class EngageSubjects implements Serializable{
 	private int sub_id;  		//id
-	private String first_kind_id;		//一级种类id
-	private String first_kind_name;//一级种类名称
-	private String second_kind_id;		//二级种类id
-	private String second_kind_name;//二级种类名称
-	private String register;		//登录人员
-	private Timestamp regist_time;					//登录时间
-	private String derivation;		//来源
-	private String content;						//内容
-	private String key_a;				//a
-	private String key_b;						//b
-	private String key_c;						//c
-	private String key_d;					//d
-	private String key_e;						//e
-	private String correct_key; //正确的答案
-	private String changer;		//修改人
-	private Timestamp change_time;//修改时间
+	private String first_kind_id = "";		//一级种类id
+	private String first_kind_name = "";//一级种类名称
+	private String second_kind_id = "";		//二级种类id
+	private String second_kind_name = "";//二级种类名称
+	private String register = "";		//登录人员
+	private String regist_time;					//登录时间
+	private String derivation = "";		//来源
+	private String content = "";						//内容
+	private String key_a = "";				//a
+	private String key_b = "";						//b
+	private String key_c = "";						//c
+	private String key_d = "";					//d
+	private String key_e = "";						//e
+	private String correct_key = ""; //正确的答案
+	private String changer = "";		//修改人
+	private String change_time;//修改时间
 	public int getSub_id() {
 		return sub_id;
 	}
@@ -57,11 +58,11 @@ public class EngageSubjects implements Serializable{
 	public void setRegister(String register) {
 		this.register = register;
 	}
-	public Timestamp getRegist_time() {
+	public String getRegist_time() {
 		return regist_time;
 	}
-	public void setRegist_time(Timestamp regist_time) {
-		this.regist_time = regist_time;
+	public void setRegist_time(String date) {
+		this.regist_time = date;
 	}
 	public String getDerivation() {
 		return derivation;
@@ -117,10 +118,10 @@ public class EngageSubjects implements Serializable{
 	public void setChanger(String changer) {
 		this.changer = changer;
 	}
-	public Timestamp getChange_time() {
+	public String getChange_time() {
 		return change_time;
 	}
-	public void setChange_time(Timestamp change_time) {
+	public void setChange_time(String change_time) {
 		this.change_time = change_time;
 	}
 }

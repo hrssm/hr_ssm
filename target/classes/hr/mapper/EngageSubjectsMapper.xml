@@ -22,7 +22,8 @@
 				  correct_key,  
 				  changer,		 
 				  change_time
- 				)values(
+ 				)
+ 				values(
  				  #{sub_id},  		
 				  #{first_kind_id},		
 				  #{first_kind_name}, 
@@ -52,9 +53,7 @@
  		 		  first_kind_id = #{first_kind_id},		
 				  first_kind_name = #{first_kind_name}, 
 				  second_kind_id = #{second_kind_id},		 
-				  second_kind_name = #{second_kind_name}, 
-				  register = #{register},		 
-				  regist_time = #{regist_time},					 
+				  second_kind_name = #{second_kind_name}, 		 
 				  derivation = #{derivation},		 
 				  content = #{content},						 
 				  key_a = #{key_a},			 
@@ -75,4 +74,58 @@
  	<select id="selectAllEngageSubjects" resultType="EngageSubjects">
  		select * from engage_subjects
  	</select>
+ 	
+ 	<select id="selectMaxId" resultType="int">
+  		select max(sub_id) from engage_subjects
+  	</select>
+  	
+  	<select id="selectSubjectGroup" resultType="EngageSubjects">
+  		select first_kind_name,GROUP_CONCAT(second_kind_name) as second_kind_name,GROUP_CONCAT(count) as content
+		from
+			(select first_kind_name,second_kind_name,count(*) as count
+			from engage_subjects
+			GROUP BY first_kind_name,second_kind_name
+			HAVING first_kind_name is not null and second_kind_name is not null) as a
+		GROUP BY first_kind_name
+  	</select>
+  	
+  	<select id="selectEngageSubjectsByCondition" parameterType="map" resultType="EngageSubjects">
+  		select * from engage_subjects
+  		<where>
+  			<if test="first_kind_id != null and first_kind_id != ''">
+  				and first_kind_id = #{first_kind_id}
+  			</if>
+  			<if test="first_kind_name != null and first_kind_name != ''">
+  				and first_kind_name = #{first_kind_name}
+  			</if>
+  			<if test="second_kind_name != null and second_kind_name != ''">
+  				and second_kind_name = #{second_kind_name}
+  			</if>
+  			<if test="second_kind_id != null and second_kind_id != ''">
+	 			and second_kind_id = #{second_kind_id}
+	 		</if>
+	 		<if test="derivation != null and derivation != ''">
+	 			<bind name="derivation" value="'%' + derivation + '%'"></bind>
+	 			and derivation like #{derivation}
+	 		</if>
+	 		<if test="register != null and register != ''">
+ 			<bind name="register" value="'%' + register + '%'"/>
+ 				and register like #{register}
+	 		</if>
+	 		<if test="changer != null and changer != ''">
+ 			<bind name="changer" value="'%' + changer + '%'"/>
+ 				and changer like #{changer}
+	 		</if>
+	 		<if test="startTime != null and startTime != ''">
+  				<![CDATA[
+	 				and change_time >= #{startTime}
+	 			]]>
+  			</if>
+	 		<if test="endTime != null and endTime != ''">
+  				<![CDATA[
+	 				and change_time <= #{endTime}
+	 			]]>
+  			</if>
+  		</where>
+  	</select>
  </mapper>

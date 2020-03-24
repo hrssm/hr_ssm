@@ -130,4 +130,13 @@ public class EngageMajorReleaseController {
 		engageMajorReleaseService.removeEngageMajorReleaseById(mid);
 		return "ok";
 	}
+	
+	@RequestMapping("/getMajorRelease.do")
+	@ResponseBody
+	public HashMap<String,List<Engage_major_release>> getMajorRelease(){
+		List<Engage_major_release> list = engageMajorReleaseService.queryEngageMajorReleaseGroupById();
+		HashMap<String,List<Engage_major_release>> map = new HashMap<String,List<Engage_major_release>>();
+		map.put("major_release", list);
+		return map;
+	}
 }

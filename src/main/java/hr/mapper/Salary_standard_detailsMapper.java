@@ -11,5 +11,6 @@ public interface Salary_standard_detailsMapper {
 	public Salary_standard_details selectSalary_standard_detailsById(int id);
 	public List<Salary_standard_details> getSalary_standard_details();
 	public boolean deleteSalary_standard_detailsById(int sid);
-
+	public boolean updateSalaryStandardDetailsByItemID(Salary_standard_details salary_standard_details);
+	public List<Salary_standard_details> selectSalary_standard_detailsByStandardId(String sid);
 }

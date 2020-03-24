@@ -42,7 +42,7 @@
 						薪酬标准编号
 					</td>
 					<td width="168" class="TD_STYLE2">
-						<input id="standard_id" type="text" name="standard_id" value="1000001" readonly="readonly" class="INPUT_STYLE2">
+						<input id="standard_id" type="text" name="standard_id" value="${standard_id }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td width="83" class="TD_STYLE1">
 						薪酬标准名称
@@ -118,7 +118,7 @@
 				<tr class="TD_STYLE2">
 					<td align="center">
 						${item.item_number}
-						<input type="hidden" name="item_id" value="${item.item_number}">
+						<input type="hidden" name="item_id" value="${item.item_id}">
 					</td>
 					<td colspan="3">
 						${item.item_name }

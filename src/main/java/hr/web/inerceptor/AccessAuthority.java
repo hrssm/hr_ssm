@@ -134,6 +134,12 @@ public class AccessAuthority implements HandlerInterceptor {
 		List<String> excitationManager = new ArrayList<String>();
 		
 		map.put(RoleConstants.EXCITATIONMANAGER, excitationManager);
+		
+		
+		//管理员
+		List<String> adminlist = new ArrayList<String>();
+		
+		map.put(RoleConstants.ADMIN, adminlist);
 	}
 	@Override
 	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)

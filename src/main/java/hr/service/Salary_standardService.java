@@ -1,5 +1,6 @@
 package hr.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import hr.pojo.Salary_item;
@@ -11,4 +12,5 @@ public interface Salary_standardService {
 	public List<Salary_standard> querySalary_standard();
 	public Salary_standard querySalary_standardById(int id);
 	public void modifySalary_standard(Salary_standard salary_standard);
+	public List<Salary_standard> querySalaryStandardCondition(HashMap<String, Object> map);
 }

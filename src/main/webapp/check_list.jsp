@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,7 +31,7 @@ function toCheck(id)
 				<tr>
 					<td>
 						当前等待复核的人力资源档案总数：
-						1
+						${max }
 						例
 					</td>
 				</tr>
@@ -64,36 +65,37 @@ function toCheck(id)
 						复核
 					</td>
 				</tr>
-				
+				<c:forEach items="${checklist }" var="humanfile" varStatus="i">
 					<tr>
 						<td class="TD_STYLE2">
-							bt0101010001
+							${humanfile.human_id }
 						</td>
 						<td class="TD_STYLE2">
-							fantia
+							${humanfile.human_name }
 						</td>
 						<td class="TD_STYLE2">
-							女
+							${humanfile.human_sex }
 						</td>
 						<td class="TD_STYLE2">
-							Better集团
+							${humanfile.first_kind_name }
 						</td>
 						<td class="TD_STYLE2">
-							Better软件公司
+							${humanfile.second_kind_name }
 						</td>
 						<td class="TD_STYLE2">
-							外包组
+							${humanfile.third_kind_name }
 						</td>
 						<td class="TD_STYLE2">
-							经理
+							${humanfile.human_pro_designation }
 						</td>
 						<td class="TD_STYLE2">
-							<a href="human_check.jsp">复核</a>
+							<a href="humanFile/queryOne.do?huf_id=${humanfile.huf_id }">复核</a>
 						</td>
 					</tr>
+				</c:forEach>					
 				
 			</table>
-			<p>&nbsp;&nbsp;总数：1例 &nbsp;&nbsp;&nbsp;当前第 1 页  &nbsp;&nbsp;&nbsp;共 1 页  &nbsp;&nbsp;&nbsp;跳到第 <input name=page type=text class=input1 size=1> 页&nbsp;&nbsp;<input type=image src="images/go.bmp" width=18 height=18 border=0>
+			<p>&nbsp;&nbsp;总数：${max }例 &nbsp;&nbsp;&nbsp;当前第 1 页  &nbsp;&nbsp;&nbsp;共 1 页  &nbsp;&nbsp;&nbsp;跳到第 <input name=page type=text class=input1 size=1> 页&nbsp;&nbsp;<input type=image src="images/go.bmp" width=18 height=18 border=0>
 		</form>
 	</body>
 </html>

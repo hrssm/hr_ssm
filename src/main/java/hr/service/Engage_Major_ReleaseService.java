@@ -10,4 +10,5 @@ public interface Engage_Major_ReleaseService {
 	public void addEngageMajorRelease(Engage_major_release engage_major_release);
 	public void modifyEngageMajorRelease(Engage_major_release engage_major_release);
 	public void removeEngageMajorReleaseById(String mre_id);
+	public List<Engage_major_release> queryEngageMajorReleaseGroupById();
 }

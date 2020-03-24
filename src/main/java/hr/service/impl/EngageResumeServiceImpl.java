@@ -45,4 +45,7 @@ public class EngageResumeServiceImpl implements EngageResumeService{
 	}
 
 
+	public List<EngageResume> queryEngageResumeByCondition(EngageResume engageResume)  {
+		return engageResumeMapper.selectEngageResumeByCondition(engageResume);
+	}
 }

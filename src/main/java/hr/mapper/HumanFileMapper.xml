@@ -170,4 +170,51 @@
 			from human_file
 	</select>
 	
+	<select id="selectHumanFileCount" resultType="_int">
+		select count(huf_id) from human_file
+	</select>
+	
+	<select id="selectHumanFileCondition" resultType="HumanFile" parameterType="hashmap">
+		select * from human_file
+		<where>
+			<if test="first_kind_id != null">
+				and first_kind_id = #{first_kind_id}
+			</if>
+			<if test="second_kind_id != null">
+				and second_kind_id = #{second_kind_id}
+			</if>
+			<if test="third_kind_id != null">
+				and third_kind_id = #{third_kind_id}
+			</if>
+			<if test="human_major_kind_id != null">
+				and human_major_kind_id = #{human_major_kind_id}
+			</if>
+			<if test="human_major_id != null">
+				and human_major_id = #{human_major_id}
+			</if>
+			<if test="human_file_status != null">
+				and human_file_status = #{human_file_status}
+			</if>
+			<if test="starttime != null">
+				<![CDATA[
+					and regist_time > #{starttime}
+				]]>
+			</if>
+			<if test="endtime != null">
+				<![CDATA[
+					and regist_time < #{endtime}
+				]]>
+			</if>
+			<if test="primarykey != null">
+	  			<bind name="pattern" value="'%' + primarykey + '%'" />
+	  			<foreach collection="prmlist" open=" " item="item" separator=" " close=" ">
+					or ${item.primary_key} like #{pattern}
+				</foreach>
+	  		</if>
+		</where>
+	</select>
+	
+	<update id="updateHumanFileStatus" parameterType="HumanFile">
+		update human_file set human_file_status = #{human_file_status} where huf_id = #{huf_id}
+	</update>
 </mapper>

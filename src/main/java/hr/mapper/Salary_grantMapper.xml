@@ -33,4 +33,11 @@
   			delete from salary_grant where sgr_id = #{id}
   		</delete>
   		
+  		<select id="selectSalaryGrantCount" resultType="java.lang.Integer">
+  			SELECT COUNT(*) FROM (SELECT COUNT(salary_grant_id) FROM salary_grant GROUP BY salary_grant_id) t
+  		</select>
+  		
+  		<select id="selectSalaryGrantMaxTime" resultType="java.sql.Timestamp">
+  			SELECT Max(regist_time) FROM salary_grant
+  		</select>
   </mapper>

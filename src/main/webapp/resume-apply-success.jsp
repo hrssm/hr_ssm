@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <center>投历成功，请等待邮箱通知</center>
+    <center>Send resume success,please wait email message!</center>
   </body>
 </html>

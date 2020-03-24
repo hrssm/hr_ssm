@@ -223,12 +223,12 @@ a {
 					<table width="100%" border="0">
 						<tr>
 							<td width="2%"><img src="images/jt0.gif"></td>
-							<td width="98%"><a href="human_register.jsp"
+							<td width="98%"><a href="humanFile/register.do"
 								target="mainFrame">人力资源档案登记</a></td>
 						</tr>
 						<tr>
 							<td><img src="images/jt0.gif"></td>
-							<td><a href="check_list.jsp" target="mainFrame">人力资源档案登记复核</a>
+							<td><a href="humanFile/queryAll.do" target="mainFrame">人力资源档案登记复核</a>
 							</td>
 						</tr>
 						<tr>
@@ -265,7 +265,7 @@ a {
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%"><a href="delete_forever_list.jsp"
+											<td width="98%"><a href="deleteLocateContorller/queryAll.do"
 												target="mainFrame">人力资源档案永久删除</a></td>
 										</tr>
 									</table>
@@ -289,7 +289,7 @@ a {
 					<table width="100%" border="0">
 						<tr>
 							<td width="2%"><img src="images/jt0.gif"></td>
-							<td width="98%"><a href="salarystandard_register.jsp"
+							<td width="98%"><a href="salary_item/queryAll.do"
 								target="mainFrame">薪酬标准登记</a></td>
 						</tr>
 						<tr>
@@ -324,7 +324,8 @@ a {
 					<table width="100%" border="0">
 						<tr>
 							<td width="2%"><img src="images/jt0.gif"></td>
-							<td width="98%">薪酬发放登记</td>
+							<td width="98%"><a href="salaryGrantController/paymentList.do"
+								target="mainFrame">薪酬发放登记</a></td>
 						</tr>
 						<tr>
 							<td><img src="images/jt0.gif"></td>
@@ -337,7 +338,7 @@ a {
 					</table>
 			</span></td>
 		</tr>
-
+		
 		<!-- 薪酬标准管理 -->
 		<tr>
 			<td class="td_style"><a onClick="noneORblock(major_change)"><img
@@ -538,19 +539,19 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=toAdd" target="mainFrame">试题登记</a>
+												href="question_subjects_regist.jsp" target="mainFrame">试题登记</a>
 											</td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=locate&param=query"
+												href="question_subjects_select.jsp"
 												target="mainFrame">试题查询</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=locate&param=change"
+												href="question_subjects_change.jsp"
 												target="mainFrame">试题变更</a></td>
 										</tr>
 									</table>
@@ -569,19 +570,20 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试出题</td>
+											<td width="98%"><a href="question_setting.jsp" target="mainFrame">考试出题</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试答题</td>
+											<td width="98%"><a href="written_examing.jsp" target="mainFrame">考试答题</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试阅卷</td>
+											<td width="98%"><a href="mark_examination_paper.jsp" target="mainFrame">考试阅卷</a></td>
+										</tr>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">成绩查询筛选</td>
+											<td width="98%"><a href="query_examination_result.jsp" target="mainFrame">成绩查询筛选</a></td>
 										</tr>
 									</table>
 							</span></td>
@@ -600,13 +602,13 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engageresume.do?operate=passList&method=register&passStatus=0"
+												href="registe-apply-list.jsp"
 												target="mainFrame">录用申请</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engageresume.do?operate=passList&method=check&passStatus=1"
+												href="registe-apply-check-list.jsp"
 												target="mainFrame">录用审批</a></td>
 										</tr>
 										<tr>

@@ -96,36 +96,36 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%"><a href="configfilefirstkind/query.do"
+											<td width="98%"><a href="first_kind.jsp"
 												target="mainFrame">I级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configfilesecondkind/query.do"
+											<td><a href="configfilesecondkind.do?operate=list"
 												target="mainFrame">II级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configfilethirdkind/query.do"
+											<td><a href="configfilethirdkind.do?operate=list"
 												target="mainFrame">III级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="professionDesignController/query.do" target="mainFrame">职称设置</a>
+											<td><a href="profession_design.jsp" target="mainFrame">职称设置</a>
 											</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configMajorKindController/query.do" target="mainFrame">职位分类设置</a>
+											<td><a href="major_kind.jsp" target="mainFrame">职位分类设置</a>
 											</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configMajorController/query.do" target="mainFrame">职位设置</a></td>
+											<td><a href="major.jsp" target="mainFrame">职位设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="publicCharController/query.do" target="mainFrame">公共属性设置</a>
+											<td><a href="public_char.jsp" target="mainFrame">公共属性设置</a>
 											</td>
 										</tr>
 									</table>
@@ -145,15 +145,11 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">
-											<a href="salary_item/query.do" target="mainFrame">薪酬项目设置</a>
-											</td>
+											<td width="98%">薪酬项目设置</td>
 										</tr>
 										<tr>
-											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">
-											<a href="salary_grant_mode.jsp" target="mainFrame">薪酬发放方式设置</a>
-											</td>
+											<td><img src="images/jt0.gif"></td>
+											<td>薪酬发放方式设置</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
@@ -293,12 +289,12 @@ a {
 					<table width="100%" border="0">
 						<tr>
 							<td width="2%"><img src="images/jt0.gif"></td>
-							<td width="98%"><a href="salary_item/queryAll.do"
+							<td width="98%"><a href="salarystandard_register.jsp"
 								target="mainFrame">薪酬标准登记</a></td>
 						</tr>
 						<tr>
 							<td><img src="images/jt0.gif"></td>
-							<td><a href="salary_standard/queryAll.do"
+							<td><a href="salarystandard_check_list.jsp"
 								target="mainFrame">薪酬标准登记复核</a></td>
 						</tr>
 						<tr>
@@ -542,19 +538,19 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=toAdd" target="mainFrame">试题登记</a>
+												href="question_subjects_regist.jsp" target="mainFrame">试题登记</a>
 											</td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=locate&param=query"
+												href="question_subjects_select.jsp"
 												target="mainFrame">试题查询</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engagesubjects.do?operate=locate&param=change"
+												href="question_subjects_change.jsp"
 												target="mainFrame">试题变更</a></td>
 										</tr>
 									</table>
@@ -573,19 +569,20 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试出题</td>
+											<td width="98%"><a href="question_setting.jsp" target="mainFrame">考试出题</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试答题</td>
+											<td width="98%"><a href="written_examing.jsp" target="mainFrame">考试答题</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">考试阅卷</td>
+											<td width="98%"><a href="mark_examination_paper.jsp" target="mainFrame">考试阅卷</a></td>
+										</tr>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">成绩查询筛选</td>
+											<td width="98%"><a href="query_examination_result.jsp" target="mainFrame">成绩查询筛选</a></td>
 										</tr>
 									</table>
 							</span></td>
@@ -604,13 +601,13 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engageresume.do?operate=passList&method=register&passStatus=0"
+												href="registe-apply-list.jsp"
 												target="mainFrame">录用申请</a></td>
 										</tr>
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engageresume.do?operate=passList&method=check&passStatus=1"
+												href="registe-apply-check-list.jsp"
 												target="mainFrame">录用审批</a></td>
 										</tr>
 										<tr>

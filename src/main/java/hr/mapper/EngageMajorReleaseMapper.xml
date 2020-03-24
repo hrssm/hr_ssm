@@ -127,4 +127,10 @@
         DELETE FROM engage_major_release WHERE MRE_ID = #{mre_id}
     </delete>
     
+    <select id="selectEngageMajorReleaseGroupById" resultType="Engage_major_release">
+    	select major_kind_id,major_kind_name,group_concat(major_id) as major_id,group_concat(major_name) as major_name 
+    	from engage_major_release
+    	group by major_kind_id
+    </select>
+    
 </mapper>

@@ -19,7 +19,7 @@
   			where ssd_id=#{ssd_id}
   		</update>
   		
-  		<select id="selectSalary_standard" resultType="Salary_standard" parameterType="_int">
+  		<select id="selectSalary_standardById" resultType="Salary_standard" parameterType="_int">
   			select * from salary_standard where ssd_id = #{id}
   		</select>
   		
@@ -31,4 +31,29 @@
   			delete from salary_standard where ssd_id = #{id}
   		</delete>
   		
+  		<select id="selectSalaryStandardCondition" resultType="Salary_standard" parameterType="hashmap">
+  			select * FROM salary_standard
+  			<where>
+  				<if test="primarykey != null">
+		  			<bind name="pattern" value="'%' + primarykey + '%'" />
+		  			<foreach collection="prmlist" open=" " item="item" separator=" " close=" ">
+						or ${item.primary_key} like #{pattern}
+					</foreach>
+	  			</if>
+  				<if test="standardId != null">
+  					<bind name="id" value="'%' + standardId + '%'" />
+  					and standard_id like #{id}
+  				</if>
+  				<if test="startTime != null">
+					<![CDATA[
+						and regist_time > #{startTime}
+					]]>
+				</if>
+				<if test="endTime != null">
+					<![CDATA[
+						and regist_time < #{endTime}
+					]]>
+				</if>
+  			</where>
+  		</select>
   </mapper>

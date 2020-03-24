@@ -10,4 +10,6 @@ public interface EngageMajorReleaseMapper {
 	public void insertEngageMajorRelease(Engage_major_release engage_major_release);
 	public void updateEngageMajorRelease(Engage_major_release engage_major_release);
 	public void deleteEngageMajorReleaseById(String mre_id);
+	
+	public List<Engage_major_release> selectEngageMajorReleaseGroupById();
 }

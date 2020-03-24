@@ -12,13 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import hr.pojo.Salary_item;
+import hr.pojo.Salary_standard;
 import hr.service.Salary_itemService;
+import hr.service.Salary_standardService;
+import hr.util.GetHumanFileId;
 
 @Controller
 @RequestMapping("/salary_item")
 public class Salary_itemController {
 	@Autowired
 	private Salary_itemService service = null;
+	@Autowired
+	private Salary_standardService standardService = null;
 	
 	private Timestamp t = null;
 	private int id = 0;
@@ -76,6 +81,8 @@ public class Salary_itemController {
 		List<Salary_item> list = service.querySalary_item();
 		model.addAttribute("list", list);
 		model.addAttribute("t", t);
+		List<Salary_standard> slist = standardService.querySalary_standard();
+		model.addAttribute("standard_id", GetHumanFileId.getSalaryIdById(slist.size()));
 		return "forward:/salarystandard_register.jsp";
 	}
 }

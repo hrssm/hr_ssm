@@ -13,4 +13,6 @@ public interface EngageResumeMapper {
 	public List<EngageResume> selectAllEngageResume();
 	public List<EngageResume> selectEngageResumeByConditions(HashMap<String,Object> map);
 	
+	public List<EngageResume> selectEngageResumeByCondition(EngageResume engageResume); 
+	
 }

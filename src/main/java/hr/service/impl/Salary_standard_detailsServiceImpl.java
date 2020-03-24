@@ -37,4 +37,14 @@ public class Salary_standard_detailsServiceImpl implements Salary_standard_detai
 		ssdm.updateSalary_standard_details(salary_standard_details);
 	}
 
+	@Override
+	public boolean modifySalaryStandardDetailsByItemID(Salary_standard_details salary_standard_details) {
+		return ssdm.updateSalaryStandardDetailsByItemID(salary_standard_details);
+	}
+
+	@Override
+	public List<Salary_standard_details> querySalary_standard_detailsByStandardId(String sid) {
+		return ssdm.selectSalary_standard_detailsByStandardId(sid);
+	}
+
 }

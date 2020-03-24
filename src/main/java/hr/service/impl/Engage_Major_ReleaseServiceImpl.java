@@ -44,5 +44,9 @@ public class Engage_Major_ReleaseServiceImpl implements Engage_Major_ReleaseServ
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public List<Engage_major_release> queryEngageMajorReleaseGroupById() {
+		return engageMarjorReleaseMapper.selectEngageMajorReleaseGroupById();
+	}
 	
 }

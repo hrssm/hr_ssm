@@ -15,14 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			href="javascript/calendar/calendar-win2k-cold-1.css">
 		<script type="text/javascript" src="javascript/calendar/cal.js"></script>
 		<script type="text/javascript" src="javascript/comm/list.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.6.1.min.js"></script>
 		<script type="text/javascript">
-		var subcat = new Array(2);
-subcat[0] = ["1", "集团/软件公司","集团","集团/软件公司"];
-subcat[1] = ["2", "集团/生物科技有限公司","集团","集团/生物科技有限公司"];
-var subcat1 = new Array(2);
-subcat1[0] = ["1", "外包组", "集团/软件公司/外包组","集团/软件公司"];
-subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/生物科技有限公司"];
-
 		 	function selAll(obj)
 		 	{
 		 		var cho = document.all.choice.value;
@@ -40,18 +34,12 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 		 			}
 		 		}
 		 	}
-		 	function downExport()
-		 	{
-		 		//document.forms[0].action = document.forms[0].action + "?operate=downExport&method=excel";
-				document.forms[0].action = "excel_success.jsp";
-				document.forms[0].submit();
-		 	}
 </script>
 	</head>
 
 	<body>
 	
-		<form action="exportfile.do" method="post">
+		<form action="humanFile/excel.do" method="post">
 				<table width="100%">
 				<tr>
 					<td>
@@ -60,7 +48,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 				</tr>
 				<tr>
 					<td align="right">
-						<input type="button" value="确定" class="BUTTON_STYLE1" onclick="downExport();">
+						<input type="submit" value="确定" class="BUTTON_STYLE1" onclick="">
 						<input type="button" value="返回" class="BUTTON_STYLE1"
 							onclick="history.back();">
 					</td>
@@ -81,7 +69,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[0].columnEN" value="firstKindName">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[0].checked" value="on">I级机构名称
+							<input type="checkbox" name="first_kind_name" value="I级机构名称">I级机构名称
 						</td>
 					
 				
@@ -89,7 +77,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[1].columnEN" value="secondKindName">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[1].checked" value="on">II级机构名称
+							<input type="checkbox" name="second_kind_name" value="on">II级机构名称
 						</td>
 					
 				
@@ -97,7 +85,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[2].columnEN" value="thirdKindName">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[2].checked" value="on">III级机构名称
+							<input type="checkbox" name="third_kind_name" value="III级机构名称">III级机构名称
 						</td>
 					
 				
@@ -105,7 +93,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[3].columnEN" value="humanId">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[3].checked" value="on">档案编号
+							<input type="checkbox" name="human_id" value="档案编号">档案编号
 						</td>
 					</tr>
 				
@@ -113,7 +101,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[4].columnEN" value="humanName">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[4].checked" value="on">姓名
+							<input type="checkbox" name="human_name" value="姓名">姓名
 						</td>
 					
 				
@@ -121,7 +109,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[5].columnEN" value="humanAddress">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[5].checked" value="on">住址
+							<input type="checkbox" name="human_address" value="住址">住址
 						</td>
 					
 				
@@ -129,7 +117,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[6].columnEN" value="humanPostcode">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[6].checked" value="on">邮编
+							<input type="checkbox" name="human_postcode" value="邮编">邮编
 						</td>
 					
 				
@@ -137,7 +125,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[7].columnEN" value="humanProDesignation">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[7].checked" value="on">职称
+							<input type="checkbox" name="human_pro_designation" value="职称">职称
 						</td>
 					</tr>
 				
@@ -145,7 +133,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[8].columnEN" value="humanMajorKindName">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[8].checked" value="on">职位分类名称
+							<input type="checkbox" name="human_major_kind_name" value="职位分类名称">职位分类名称
 						</td>
 					
 				
@@ -153,7 +141,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[9].columnEN" value="hunmaMajorName">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[9].checked" value="on">职位名称
+							<input type="checkbox" name="hunma_major_name" value="职位名称">职位名称
 						</td>
 					
 				
@@ -161,7 +149,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[10].columnEN" value="humanBank">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[10].checked" value="on">开户银行
+							<input type="checkbox" name="human_bank" value="开户银行">开户银行
 						</td>
 					
 				
@@ -169,7 +157,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[11].columnEN" value="humanAccount">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[11].checked" value="on">银行账户
+							<input type="checkbox" name="human_account" value="银行账户">银行账户
 						</td>
 					</tr>
 				
@@ -177,7 +165,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[12].columnEN" value="humanTelephone">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[12].checked" value="on">电话
+							<input type="checkbox" name="human_telephone" value="电话">电话
 						</td>
 					
 				
@@ -185,7 +173,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[13].columnEN" value="humanMobilephone">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[13].checked" value="on">手机
+							<input type="checkbox" name="human_mobilephone" value="手机">手机
 						</td>
 					
 				
@@ -193,7 +181,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[14].columnEN" value="humanEmail">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[14].checked" value="on">email
+							<input type="checkbox" name="human_email" value="email">email
 						</td>
 					
 				
@@ -201,7 +189,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[15].columnEN" value="humanHobby">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[15].checked" value="on">爱好
+							<input type="checkbox" name="human_hobby" value="爱好">爱好
 						</td>
 					</tr>
 				
@@ -209,7 +197,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[16].columnEN" value="humanSpeciality">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[16].checked" value="on">特长
+							<input type="checkbox" name="human_speciality" value="特长">特长
 						</td>
 					
 				
@@ -217,7 +205,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[17].columnEN" value="humanSex">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[17].checked" value="on">性别
+							<input type="checkbox" name="human_sex" value="性别">性别
 						</td>
 					
 				
@@ -225,7 +213,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[18].columnEN" value="humanReligion">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[18].checked" value="on">宗教信仰
+							<input type="checkbox" name="human_religion" value="宗教信仰">宗教信仰
 						</td>
 					
 				
@@ -233,7 +221,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[19].columnEN" value="humanParty">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[19].checked" value="on">政治面貌
+							<input type="checkbox" name="human_party" value="政治面貌">政治面貌
 						</td>
 					</tr>
 				
@@ -241,7 +229,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[20].columnEN" value="humanNationality">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[20].checked" value="on">国籍
+							<input type="checkbox" name="human_nationality" value="国籍">国籍
 						</td>
 					
 				
@@ -249,7 +237,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[21].columnEN" value="humanRace">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[21].checked" value="on">民族
+							<input type="checkbox" name="human_race" value="民族">民族
 						</td>
 					
 				
@@ -257,7 +245,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[22].columnEN" value="humanBirthday">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[22].checked" value="on">生日
+							<input type="checkbox" name="human_birthday" value="1999-12-20">生日
 						</td>
 					
 				
@@ -265,7 +253,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[23].columnEN" value="humanBirthplace">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[23].checked" value="on">出生地
+							<input type="checkbox" name="human_birthplace" value="出生地">出生地
 						</td>
 					</tr>
 				
@@ -273,7 +261,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[24].columnEN" value="humanAge">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[24].checked" value="on">年龄
+							<input type="checkbox" name="human_age" value="1">年龄
 						</td>
 					
 				
@@ -281,7 +269,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[25].columnEN" value="humanEducatedDegree">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[25].checked" value="on">学历
+							<input type="checkbox" name="human_educated_degree" value="学历">学历
 						</td>
 					
 				
@@ -289,7 +277,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[26].columnEN" value="humanEducatedYears">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[26].checked" value="on">教育年限
+							<input type="checkbox" name="human_educated_years" value="1">教育年限
 						</td>
 					
 				
@@ -297,7 +285,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[27].columnEN" value="humanEducatedMajor">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[27].checked" value="on">专业
+							<input type="checkbox" name="human_educated_major" value="专业">专业
 						</td>
 					</tr>
 				
@@ -305,7 +293,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[28].columnEN" value="humanSocietySecurityId">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[28].checked" value="on">社会保障号码
+							<input type="checkbox" name="human_society_security_id" value="社会保障号码">社会保障号码
 						</td>
 					
 				
@@ -313,7 +301,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[29].columnEN" value="humanIdCard">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[29].checked" value="on">身份证号
+							<input type="checkbox" name="human_id_card" value="身份证号">身份证号
 						</td>
 					
 				
@@ -321,7 +309,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[30].columnEN" value="salaryStandardId">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[30].checked" value="on">薪酬标准编号
+							<input type="checkbox" name="salary_standard_id" value="薪酬标准编号">薪酬标准编号
 						</td>
 					
 				
@@ -329,7 +317,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[31].columnEN" value="salaryStandardName">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[31].checked" value="on">薪酬标准
+							<input type="checkbox" name="salary_standard_name" value="薪酬标准">薪酬标准
 						</td>
 					</tr>
 				
@@ -337,7 +325,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[32].columnEN" value="salarySum">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[32].checked" value="on">基本薪酬总额
+							<input type="checkbox" name="salary_sum" value="1">基本薪酬总额
 						</td>
 					
 				
@@ -345,7 +333,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[33].columnEN" value="paidSalarySum">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[33].checked" value="on">实发薪酬总额
+							<input type="checkbox" name="paid_salary_sum" value="1">实发薪酬总额
 						</td>
 					
 				
@@ -353,7 +341,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[34].columnEN" value="majorChangeAmount">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[34].checked" value="on">调动次数
+							<input type="checkbox" name="major_change_amount" value="1">调动次数
 						</td>
 					
 				
@@ -361,7 +349,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[35].columnEN" value="bonusAmount">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[35].checked" value="on">激励次数
+							<input type="checkbox" name="bonus_amount" value="1">激励次数
 						</td>
 					</tr>
 				
@@ -369,7 +357,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[36].columnEN" value="trainingAmount">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[36].checked" value="on">培训次数
+							<input type="checkbox" name="training_amount" value="1">培训次数
 						</td>
 					
 				
@@ -377,7 +365,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[37].columnEN" value="humanHistroyRecords">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[37].checked" value="on">个人履历
+							<input type="checkbox" name="human_histroy_records" value="个人履历">个人履历
 						</td>
 					
 				
@@ -385,7 +373,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[38].columnEN" value="humanFamilyMembership">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[38].checked" value="on">家庭关系信息
+							<input type="checkbox" name="human_family_membership" value="家庭关系信息">家庭关系信息
 						</td>
 					
 				
@@ -393,7 +381,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[39].columnEN" value="remark">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[39].checked" value="on">备注
+							<input type="checkbox" name="remark" value="备注">备注
 						</td>
 					</tr>
 				
@@ -401,7 +389,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[40].columnEN" value="fileChangAmount">
 					<tr>
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[40].checked" value="on">档案变更累计
+							<input type="checkbox" name="file_chang_amount" value="1">档案变更累计
 						</td>
 					
 				
@@ -409,7 +397,7 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[41].columnEN" value="register">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[41].checked" value="on">登记人
+							<input type="checkbox" name="register" value="登记人">登记人
 						</td>
 					
 				
@@ -417,23 +405,23 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 					<input type="hidden" name="list[42].columnEN" value="registTime">
 					
 						<td class="TD_STYLE2">
-							<input type="checkbox" name="list[42].checked" value="on">建档时间
+							<input type="checkbox" name="regist_time" value="1999-12-20">建档时间
 						</td>
 					
 				
 				</table>
 			<br>
-				<table class="TABLE_STYLE1" width="100%">
-						<tr class="TR_STYLE1">
+				<table width="100%" border="1" cellpadding=0 cellspacing=1
+				bordercolorlight=#848284 bordercolordark=#eeeeee
+				class="TABLE_STYLE1">
+				<tr class="TR_STYLE1">
 					<td width="16%" class="TD_STYLE1">
 						请选择员工所在I级机构
 					</td>
 					<td width="84%" class="TD_STYLE2">
-						<select name="item.firstKindName" size="5" onchange="changelocation(document.forms[0].elements['item.secondKindName'],document.forms[0].elements['item.firstKindName'].options[document.forms[0].elements['item.firstKindName'].selectedIndex].value)" class="SELECT_STYLE2"><option value="">&nbsp;</option>
-							
-								<option value="集团">集团</option>
-							
-								<option value="02">02</option></select>
+						<select name="first_kind_id" size="5" id="SelectFirst" class="SELECT_STYLE2">
+						</select>
+						<input type="hidden" vlaue="" name="first_kind_name" id="first_kind_name">
 					</td>
 				</tr>
 				<tr>
@@ -441,9 +429,8 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 						请选择员工所在II级机构
 					</td>
 					<td width="84%" class="TD_STYLE2">
-						<select name="item.secondKindName" size="5" onchange="changelocation1(document.forms[0].elements['item.thirdKindName'],document.forms[0].elements['item.secondKindName'].options[document.forms[0].elements['item.secondKindName'].selectedIndex].value)" class="SELECT_STYLE2"><script language="javascript">
-								changelocation(document.forms[0].elements["item.secondKindName"],document.forms[0].elements["item.firstKindName"].value)
-    						</script></select>
+						<select name="second_kind_id" size="5" id="SelectSecond" class="SELECT_STYLE2"></select>
+						<input type="hidden" vlaue="" name="second_kind_name" id="second_kind_name">
 					</td>
 				</tr>
 				<tr class="TR_STYLE1">
@@ -451,18 +438,16 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 						请选择员工所在III级机构
 					</td>
 					<td width="84%" class="TD_STYLE2">
-						<select name="item.thirdKindName" size="5" class="SELECT_STYLE2"><script language="javascript">
-							changelocation1(document.forms[0].elements["item.thirdKindName"],document.forms[0].elements["item.secondKindName"].value)
-							</script></select>
+						<select name="third_kind_id" size="5" id="SelectThird" class="SELECT_STYLE2"></select>
+						<input type="hidden" vlaue="" name="third_kind_name" id="third_kind_name">
 					</td>
 				</tr>
-				
-				<tr class="TR_STYLE1">
-					<td class="TD_STYLE1" width="20%">
+				<tr>
+					<td class="TD_STYLE1">
 						请输入建档时间
 					</td>
 					<td width="84%" class="TD_STYLE2">
-						<input type="text" name="item.str_startTime" value="" style="width:14% " class="INPUT_STYLE2" id="date_start">至<input type="text" name="item.str_endTime" value="" style="width:14% " class="INPUT_STYLE2" id="date_end">
+						<input type="text" name="regist_time" value="" style="width:14% " class="INPUT_STYLE2" id="date_start">至<input type="text" name="lastly_change_time" value="" style="width:14% " class="INPUT_STYLE2" id="date_end">
 						（YYYY-MM-DD）
 					</td>
 				</tr>
@@ -470,7 +455,90 @@ subcat1[1] = ["2", "药店", "集团/生物科技有限公司/药店","集团/�
 		</form>
 	</body>
 <script type="text/javascript">
-Calendar.setup ({inputField : "date_start", ifFormat : "%Y-%m-%d", showsTime : false, button : "date_start", singleClick : true, step : 1});
-Calendar.setup ({inputField : "date_end", ifFormat : "%Y-%m-%d", showsTime : false, button : "date_end", singleClick : true, step : 1});
+		window.onload = init();
+		function init(){
+			$.ajax({
+ 					url:"queryLocateController/init.do",
+ 					type:'get',
+ 					dataType : 'json',
+ 					success:function(data){
+ 						//初始化
+ 						if(data.first_total != 0)
+ 						{
+ 							var firstOptions = ``;
+ 							$.each(data.firstlist,function(i,item)
+ 							{
+ 								firstOptions +="<option id=first_"+item.first_kind_id+" value="+item.first_kind_id+">"+item.first_kind_name+"</option>";
+ 							});
+ 							$("#SelectFirst").append(firstOptions);
+ 						}
+ 						if(data.second_total != 0)
+ 						{
+ 							var SecondOptions = ``;
+ 							$.each(data.secondlist,function(i,item)
+ 							{
+ 								SecondOptions +="<option id=second_"+item.second_kind_id+" value="+item.second_kind_id+">"+item.second_kind_name+"</option>";
+ 							});
+ 							$("#SelectSecond").append(SecondOptions);
+ 						}
+ 						if(data.third_total != 0)
+ 						{
+ 							var thirdOptions = ``;
+ 							$.each(data.thirdlist,function(i,item)
+ 							{
+ 								thirdOptions +="<option id=third_"+item.third_kind_id+" value="+item.third_kind_id+">"+item.third_kind_name+"</option>";
+ 							});
+ 							$("#SelectThird").append(thirdOptions);
+ 						}
+ 						//二级联动
+ 						$("#SelectFirst").change(function (){
+ 							$("#SelectSecond").each(function(){
+ 								if($(this).val() != ""){
+ 									$(this).empty();
+ 								}
+ 							});
+ 							var fid = $(this).val();
+ 							if(data.second_total != 0)
+ 							{
+	 							var secondOptions = ``;
+	 							$.each(data.secondlist,function(i,item)
+	 							{
+	 								if(fid == item.first_kind_id)
+	 								{
+	 									secondOptions +="<option id=second_"+item.second_kind_id+" value="+item.second_kind_id+">"+item.second_kind_name+"</option>";
+	 								}
+	 							});
+	 							$("#SelectSecond").append(secondOptions);
+ 							}
+ 						});
+ 						//三级联动
+ 						$("#SelectSecond").change(function()
+ 						{
+ 							$("#SelectThird").each(function(){
+ 								if($(this).val() != ""){
+ 									$(this).empty();
+ 								}
+ 							});
+ 							var sid = $(this).val();
+ 							if(data.third_total != 0)
+ 							{
+	 							var thirdOptions = ``;
+	 							$.each(data.thirdlist,function(i,item)
+	 							{
+	 								if(sid == item.second_kind_id)
+	 								{
+	 									thirdOptions +="<option id=third_"+item.third_kind_id+" value="+item.third_kind_id+">"+item.third_kind_name+"</option>";
+	 								}
+	 							});
+	 							$("#SelectThird").append(thirdOptions);
+ 							}
+ 						});
+ 					}
+ 			});
+		};
+	</script>
+<script type="text/javascript">
+	Calendar.setup ({inputField : "date_start", ifFormat : "%Y-%m-%d", showsTime : false, button : "date_start", singleClick : true, step : 1});
+	Calendar.setup ({inputField : "date_end", ifFormat : "%Y-%m-%d", showsTime : false, button : "date_end", singleClick : true, step : 1});
 </script>
 </html>

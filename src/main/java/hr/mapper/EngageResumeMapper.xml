@@ -208,4 +208,12 @@
 	  		</where>
 	  		order by res_id
 	  </select>
+	  
+	  <select id="selectEngageResumeByCondition" parameterType="EngageResume" resultType="EngageResume">
+	  	select * from engage_resume 
+	  	where 
+	  	human_idcard = #{human_idcard}
+	  	and  human_major_kind_name = #{human_major_kind_name}
+		and	 human_major_name = #{human_major_name}
+	  </select>
   </mapper>

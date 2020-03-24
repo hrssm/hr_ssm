@@ -80,7 +80,14 @@
   </bean>
 	
 	<!-- 启用springmvc的注解模式 -->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven conversion-service="converterUtil"/>
+	<bean id="converterUtil" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="hr.util.StringToTimestampConverter"></bean>
+			</list>
+		</property>
+	</bean>
 	
 	<mvc:interceptors>
 		 <bean class="hr.web.inerceptor.AccessAuthority"/>

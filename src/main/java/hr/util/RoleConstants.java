@@ -41,5 +41,9 @@ public interface RoleConstants {
 	 * 激励经理
 	 */
 	public static final String EXCITATIONMANAGER = "excitationManager";
+	/**
+	 * 管理员
+	 */
+	public static final String ADMIN = "admin";
 	
 }

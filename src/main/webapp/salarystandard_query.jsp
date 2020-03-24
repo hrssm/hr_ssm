@@ -8,8 +8,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <
 
-
-
 <html>
 	<head>
 		<base href="<%=basePath%>">
@@ -42,19 +40,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						薪酬编号
 					</td>
 					<td width="15%" class="TD_STYLE2">
-						${ss.standard_id}
+						${salary.standard_id}
 					</td>
 					<td width="12%" class="TD_STYLE1">
 						薪酬标准名称
 					</td>
 					<td width="11%" class="TD_STYLE2">
-						${ss.standard_name}
+						${salary.standard_name}
 					</td>
 					<td width="11%" class="TD_STYLE1">
 						薪酬总额
 					</td>
 					<td width="17%" class="TD_STYLE2">
-						${ss.salary_sum}
+						${salary.salary_sum}
 					</td>
 					<td class="TD_STYLE1" width="12%" >
 						&nbsp;
@@ -68,19 +66,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						制定人
 					</td>
 					<td class="TD_STYLE2">
-						${ss.designer}
+						${salary.designer}
 					</td>
 					<td class="TD_STYLE1">
 						复核人
 					</td>
 					<td class="TD_STYLE2">
-						better_wanghao
+						${salary.checker}
 					</td>
 					<td class="TD_STYLE1">
 						复核时间
 					</td>
 					<td class="TD_STYLE2">
-						${t}
+						${salary.check_time}
 					</td>
 					<td class="TD_STYLE1">
 						&nbsp;
@@ -94,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						备注
 					</td>
 					<td colspan="7" class="TD_STYLE2" height="68">
-						${ss.remark}
+						${salary.remark}
 					</td>
 				</tr>
 				<tr>
@@ -108,15 +106,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						金额
 					</td>
 				</tr>
-				<c:forEach items="${list}" var="item" varStatus="i">
+				<c:forEach items="${detailList}" var="item" varStatus="i">
 				<tr class="TD_STYLE2">
 					<td>
-						${item.item_number}
+						${item.item_id}
 					</td>
 					<td colspan="3">
 						${item.item_name }
 					</td>
 					<td colspan="4">
+						${item.salary }
 					</td>
 				</tr>
 				</c:forEach>

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -91,7 +93,6 @@ public class ConfigQuestionSecondKindController {
 	@RequestMapping(value="/selectAll.do",method=RequestMethod.POST)
 	@ResponseBody
 	public List selectAll(Model model) {
-		System.out.println("selectAll");
 		List<ConfigQuestionSecondKind> list = service.queryAllConfigQuestionSecondKind();
 		return list;
 	}

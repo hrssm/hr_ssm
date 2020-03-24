@@ -1,5 +1,6 @@
 package hr.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class Salary_standardServiceImpl implements Salary_standardService{
 	@Override
 	public void modifySalary_standard(Salary_standard salary_standard) {
 		sm.updateSalary_standard(salary_standard);
+	}
+
+	@Override
+	public List<Salary_standard> querySalaryStandardCondition(HashMap<String, Object> map) {
+		return sm.selectSalaryStandardCondition(map);
 	}
 
 }
