@@ -145,11 +145,11 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">薪酬项目设置</td>
+											<a href="salary_item/query.do" target="mainFrame">薪酬项目设置</a>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td>薪酬发放方式设置</td>
+											<a href="salary_grant_mode.jsp" target="mainFrame">薪酬发放方式设置</a>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
@@ -294,7 +294,7 @@ a {
 						</tr>
 						<tr>
 							<td><img src="images/jt0.gif"></td>
-							<td><a href="salarystandard_check_list.jsp"
+							<td><a href="salary_standard/queryAll.do"
 								target="mainFrame">薪酬标准登记复核</a></td>
 						</tr>
 						<tr>
@@ -512,12 +512,12 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="engageresume.do?operate=locate&method=interview"
+												href="engageinterview/initList.do"
 												target="mainFrame">面试结果登记</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="engageinterview.do?operate=list"
+											<td><a href="engageinterview/queryAll.do"
 												target="mainFrame">面试筛选</a></td>
 										</tr>
 									</table>

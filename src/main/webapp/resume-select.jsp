@@ -214,8 +214,6 @@ function toCheck(id)
 							<option value="${re.human_party }">${re.human_party }</option>
 						</select>
 					</td>
-
-
 				</tr>
 				<tr>
 					<td class="TD_STYLE1">

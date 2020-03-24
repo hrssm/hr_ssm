@@ -33,7 +33,7 @@
 		function doDelete(mid){
 		if(window.confirm("确认删除该项纪录？")){
 		$.ajax({
-			url:'deleteMajorRelease?mid='+mid,
+			url:'deleteMajorRelease.do?mid='+mid,
 			type:'get',
 			success:function(data){
 					if(data == 'ok'){

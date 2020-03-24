@@ -7,32 +7,32 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>My JSP 'interview-sift.jsp' starting page</title>
     	<link rel="stylesheet"
-			href="css/table.css" type="text/css">
+			href="/hr_ssm/css/table.css" type="text/css">
 		<link rel="stylesheet"
-			href="css/cwcalendar.css"
+			href="/hr_ssm/css/cwcalendar.css"
 			type="text/css">
 		<script type="text/javascript"
-			src="javascript/comm/comm.js">
+			src="/hr_ssm/javascript/comm/comm.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/comm/list.js">
+			src="/hr_ssm/javascript/comm/list.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/calendar-ch.js">
+			src="/hr_ssm/javascript/calendar-ch.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/jquery-1.7.2.js">
+			src="/hr_ssm/javascript/jquery-1.7.2.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/locate.js">
+			src="/hr_ssm/javascript/locate.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/select.js">
+			src="/hr_ssm/javascript/select.js">
 	
 </script>
 		
@@ -164,23 +164,14 @@
 		
  		</script>
  		<script type="text/javascript">
- 		function search(id){   
- 		if(document.getElementById("passCheckcomment").value=="删除简历"){
-		//	window.location.href="/HR_Fist/recruit/recruitAction!deleteResumeById?id="+id;
-		 document.fm.submit();
-		}else if(document.getElementById("passCheckcomment").value=="建议录用"){
-				document.getElementById("ly").value = true;
-			 document.fm.submit();
-		}else if(document.getElementById("passCheckcomment").value=="建议面试"){
-				document.getElementById("mianshi").value = false;
-			 document.fm.submit();
-		} 
+ 		function search(){   
+ 			document.fm.submit();
 		}
  		</script>
 	</head>
 
 	<body onload="check(),luy()">
-		<form id="recruitAction!returnSiftList" name="fm" action="updateSift" method="post" enctype="multipart/form-data">
+		<form id="recruitAction!returnSiftList" name="fm" action="updateSift.do" method="post" enctype="multipart/form-data">
 		
 			<table width="100%">
 				<tr>
@@ -195,13 +186,13 @@
 						<input type="radio" name="result"   value="建议录用"  checked="checked" onclick="luy()">建议录用
 						<input type="radio" name="result"  value="删除简历" onclick="del()">删除简历
 						<input type="submit" value="确认" class="BUTTON_STYLE1"
-							onclick="search('542')">
+							onclick="search()">
 						<input type="button" value="返回" class="BUTTON_STYLE1" 
 							onclick="history.back();">
 					</td>
-				</tr>
+				</tr>嗯
 			</table>
-			<input type="hidden" name="einid" value="${vi.einid }">
+			<input type="hidden" name="einid" value="${vi.ein_id }">
 			<table width="100%" border="1" cellpadding=0 cellspacing=1
 				bordercolorlight=#848284 bordercolordark=#eeeeee
 				class="TABLE_STYLE1">
@@ -210,23 +201,23 @@
 						职位分类
 					</td>
 					<td width="14%" class="TD_STYLE2"> 
-						<input type="hidden" name="humanMajorKindId" value="02"/>
-					   <input type="text" name="humanmajorkindname"
-						   value="${vi.resumeid.humanmajorkindname }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="hidden" name="human_major_kind_id" value="${vi.human_major_kind_id }"/>
+					   <input type="text" name="human_major_kin_dname"
+						   value="${vi.human_major_kind_name }" readonly="readonly" class="INPUT_STYLE2">
 					
 					</td>
 					<td width="11%" class="TD_STYLE1">
 						职位名称
 					</td>
 					<td width="14%" class="TD_STYLE2">
-					<input type="hidden" name="humanMajorId" value=""/>
-					 <input type="text" name="humanmajorname" value="${vi.resumeid.humanmajorname }" readonly="readonly" class="INPUT_STYLE2">
+					<input type="hidden" name="human_major_id" value="${re.human_major_id }"/>
+					 <input type="text" name="human_major_name" value="${re.human_major_name }" readonly="readonly" class="INPUT_STYLE2">
 				    </td>
 					<td width="11%" class="TD_STYLE1">
 						招聘类型
 					</td>
 					<td class="TD_STYLE2" >
-						<input type="text" name="engagetype" value="${vi.resumeid.engagetype }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="engage_type" value="${re.engage_type }" readonly="readonly" class="INPUT_STYLE2">
 					
 					</td>
 					
@@ -240,20 +231,20 @@
 						姓名
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanname" value="${vi.resumeid.humanname }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_name" value="${vi.human_name }" readonly="readonly" class="INPUT_STYLE2">
 						
 					</td>
 					<td class="TD_STYLE1">
 						性别
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humansex" value="${vi.resumeid.humansex }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_sex" value="${re.human_sex }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						EMAIL
 					</td>
 					<td   class="TD_STYLE2">
-						<input type="text" name="humanemail" value="${vi.resumeid.humanemail }"  readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_email" value="${re.human_email }"  readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 
@@ -262,19 +253,19 @@
 						电话号码
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humantelephone" value="${vi.resumeid.humantelephone }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_telephone" value="${re.human_telephone }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						家庭电话
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanhomephone" value="${vi.resumeid.humanhomephone }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_homephone" value="${re.human_homephone }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1" >
 						手机
 					</td>
 					<td  class="TD_STYLE2" >
-						<input type="text" name="humanmobilephone" value="${vi.resumeid.humanmobilephone }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_mobilephone" value="${re.human_mobilephone }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					
 				</tr>
@@ -283,13 +274,13 @@
 						住址
 					</td>
 					<td colspan="3" class="TD_STYLE2">
-						<input type="text" name="humanaddress" value="${vi.resumeid.humanaddress }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_address" value="${re.human_address }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						邮编
 					</td>
 					<td   class="TD_STYLE2">
-						<input type="text" name="humanpostcode" value="${vi.resumeid.humanpostcode }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_postcode" value="${re.human_postcode }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 
@@ -298,19 +289,19 @@
 						国籍
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humannationality" value="${vi.resumeid.humannationality }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_nationality" value="${re.human_nationality }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						出生地
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanbirthplace" value="${vi.resumeid.humanbirthplace }"  readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_birthplace" value="${re.human_birthplace }"  readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						生日
 					</td>
 					<td class="TD_STYLE2"  > 
-						<input type="text" name="humanbirthday" value="${vi.resumeid.humanbirthday }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_birthday" value="${re.human_birthday }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 				
@@ -319,19 +310,19 @@
 						民族
 					</td>
 					<td class="TD_STYLE2" width="14%">
-						<input type="text" name="humanrace" value="${vi.resumeid.humanrace }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_race" value="${re.human_race }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						宗教信仰
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanreligion" value="${vi.resumeid.humanreligion }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_religion" value="${re.human_religion }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						政治面貌
 					</td>
 					<td class="TD_STYLE2" >
-						<input type="text" name="humanparty" value="${vi.resumeid.humanparty }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_party" value="${re.human_party }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 				<tr>
@@ -340,25 +331,25 @@
 						身份证号码
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanidcard" value="${vi.resumeid.humanidcard }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_idcard" value="${re.human_idcard }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						年龄
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanage" value="${vi.resumeid.humanage }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_age" value="${re.human_age }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						毕业学校
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humancollege" value="${vi.resumeid.humancollege }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_college" value="${re.human_college }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1" width="10%">
 						学历
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humaneducateddegree" value="${vi.resumeid.humaneducateddegree }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_educated_degree" value="${re.human_educated_degree }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 				<tr>
@@ -366,25 +357,25 @@
 						教育年限
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humaneducatedyears"  value="${vi.resumeid.humaneducatedyears }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_educated_years"  value="${re.human_educated_years }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						学历专业
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humaneducatedmajor" value="${vi.resumeid.humaneducatedmajor }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_educated_major" value="${re.human_educated_major }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						薪酬要求
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="demandsalarystandard" value="${vi.resumeid.demandsalarystandard }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="demand_salary_standard" value="${re.demand_salary_standard }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						注册时间
 					</td>
 					<td class="TD_STYLE2"> 
-						<input type="text" name="registtime" value="${vi.resumeid.registtime }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="regist_time" value="${re.regist_time }" readonly="readonly" class="INPUT_STYLE2">
 						
 					</td>
 				</tr>
@@ -393,25 +384,25 @@
 						特长
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanspecility" value="${vi.resumeid.humanspecility }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_specility" value="${re.human_specility }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						爱好
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="humanhobby" value="${vi.resumeid.humanhobby }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="human_hobby" value="${re.human_hobby }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1"><span style="font-size: 10.5pt; font-family: 宋体;"></span> 
 						推荐人
 					</td>
 					<td class="TD_STYLE2">
-						<input type="text" name="checker" value="${vi.resumeid.checker }" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="checker" value="${re.checker }" readonly="readonly" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1"><span style="font-size: 10.5pt; font-family: 宋体;"></span> 
 						推荐时间
 					</td>
 					<td class="TD_STYLE2"> 
-						<input type="text" name="checktime" value="${vi.resumeid.checktime }" readonly="readonly" class="INPUT_STYLE2">	 
+						<input type="text" name="check_time" value="${re.check_time }" readonly="readonly" class="INPUT_STYLE2">	 
 					</td>
 				</tr>
 				<tr>
@@ -419,7 +410,7 @@
 						档案附件
 					</td>
 					<td colspan="7" class="TD_STYLE2">
-						<input type="text" name="checker" readonly="readonly" class="INPUT_STYLE2">
+						<input type="text" name="checker" value = "${re.checker }"readonly="readonly" class="INPUT_STYLE2">
 					</td>
 				</tr>
 			<tr>
@@ -427,8 +418,8 @@
 						个人履历
 					</td>
 					<td colspan="7" class="TD_STYLE2">
-						<textarea name="humanhistoryrecords" rows="4"  
-						class="TEXTAREA_STYLE1" readonly="readonly"> ${vi.resumeid.humanhistoryrecords }
+						<textarea name="human_history_records" rows="4"  
+						class="TEXTAREA_STYLE1" readonly="readonly"> ${re.human_history_records }
 						</textarea>
 					</td>
 				</tr>
@@ -437,7 +428,7 @@
 						备注
 					</td>
 					<td colspan="7" class="TD_STYLE2">
-						<textarea name="remark" rows="4"   class="TEXTAREA_STYLE1"  readonly="readonly"> ${vi.resumeid.remark }
+						<textarea name="remark" rows="4"   class="TEXTAREA_STYLE1"  readonly="readonly"> ${re.remark }
 						</textarea>
 					</td>
 				</tr>
@@ -447,7 +438,7 @@
 						筛选推荐意见
 					</td>
 					<td class="TD_STYLE2" colspan="7">
-						<textarea name="recomandation" rows="4"   class="TEXTAREA_STYLE1" readonly="readonly">${vi.resumeid.recomandation }</textarea>
+						<textarea name="recomandation" rows="4"   class="TEXTAREA_STYLE1" readonly="readonly">${re.recomandation }</textarea>
 					</td>
 				</tr>
 				
@@ -458,14 +449,14 @@
 						面试次数
 					</td>
 					<td class="TD_STYLE2">
-					 	<input type="text"   name="interviewamount" value="${vi.interviewamount }" class="INPUT_STYLE2" readonly="readonly"/>
+					 	<input type="text"   name="interview_amount" value="${vi.interview_amount}" class="INPUT_STYLE2" readonly="readonly"/>
 					</td>
 					<td class="TD_STYLE1">
 						形象评价
 					</td>
 					<td class="TD_STYLE2">
 						 
-				 <input type="text"  name="imagedegree" value="${vi.imagedegree }" class="INPUT_STYLE2" readonly="readonly"/>
+				 <input type="text"  name="image_degree" value="${vi.image_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 					<td class="TD_STYLE1">
@@ -473,7 +464,7 @@
 					</td>
 					<td class="TD_STYLE2">
 					 
-						 <input type="text"  name="nativelanguagedegree" value="${vi.nativelanguagedegree }" class="INPUT_STYLE2" readonly="readonly"/>
+						 <input type="text"  name="native_language_degree" value="${vi.native_language_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 					<td class="TD_STYLE1">
@@ -481,7 +472,7 @@
 					</td>
 					<td class="TD_STYLE1">
 					 
-						 <input type="text"  name="foreignlanguagedegree" value="${vi.foreignlanguagedegree }" class="INPUT_STYLE2" readonly="readonly"/>
+						 <input type="text"  name="foreign_language_degree" value="${vi.foreign_language_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 				</tr>
@@ -491,28 +482,28 @@
 					</td>
 					<td class="TD_STYLE2">
 					 
-						<input type="text"  name="responsespeeddegree" value="${vi.responsespeeddegree }" class="INPUT_STYLE2" readonly="readonly"/>
+						<input type="text"  name="response_speed_degree" value="${vi.response_speed_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 					<td class="TD_STYLE1">
 						EQ
 					</td>
 					<td class="TD_STYLE2"> 
-						<input type="text"  name="EQdegree" value="${vi.EQdegree }" class="INPUT_STYLE2" readonly="readonly"/>
+						<input type="text"  name="EQ_degree" value="${vi.EQ_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 					<td class="TD_STYLE1">
 						IQ
 					</td>
 					<td class="TD_STYLE2"> 
-						 <input type="text"  name="IQdegree" value="${vi.IQdegree }" class="INPUT_STYLE2" readonly="readonly"/>
+						 <input type="text"  name="IQ_degree" value="${vi.IQ_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 					<td class="TD_STYLE1">
 						综合素质
 					</td>
 					<td class="TD_STYLE1">
-					 <input type="text"  name="multiqualitydegree" value="${vi.multiqualitydegree }" class="INPUT_STYLE2" readonly="readonly"/>
+					 <input type="text"  name="multi_quality_degree" value="${vi.multi_quality_degree }" class="INPUT_STYLE2" readonly="readonly"/>
 				
 					</td>
 				</tr>
@@ -527,21 +518,21 @@
 						面试时间
 					</td>
 					<td class="TD_STYLE2"> 
-					<input type="text" name="registetime" value="${vi.registetime }" class="INPUT_STYLE2"/>
+					<input type="text" name="registe_time" value="${vi.registe_time }" class="INPUT_STYLE2"/>
 						  
 					</td>
 					<td class="TD_STYLE1">
 						筛选人
 					</td>
 					<td class="TD_STYLE2">
-					 <input type="text" name="checker" value="${userlogin.user_true_name }" class="INPUT_STYLE2"/>
+					 <input type="text" name="checker" value="${userlogin.u_true_name }" class="INPUT_STYLE2"/>
 				 
 					</td>
 					<td class="TD_STYLE1">
 						筛选时间
 					</td>
 					<td class="TD_STYLE2"> 
-				  	<input type="text" name="checktime"
+				  	<input type="text" name="check_time"
 							  id="nowTime" readonly="readonly"
 							class="INPUT_STYLE2">
 					</td>
@@ -551,16 +542,12 @@
 						录用申请审核意见
 					</td>
 					<td class="TD_STYLE2" colspan="7">
-						<textarea name="checkcomment" class="TEXTAREA_STYLE1"
+						<textarea name="check_comment" class="TEXTAREA_STYLE1"
 							rows="4" readonly="readonly" id="passCheckcomment">建议录用</textarea>
 					</td>
 				</tr>
 			</table>
 		</form>
-
-
-
-
 	</body>
  
 </html>

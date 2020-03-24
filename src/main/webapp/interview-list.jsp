@@ -1,4 +1,4 @@
-                             <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,32 +7,32 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>My JSP 'interview-list.jsp' starting page</title>
 		<link rel="stylesheet"
-			href="css/table.css" type="text/css">
+			href="/hr_ssm/css/table.css" type="text/css">
 		<link rel="stylesheet"
-			href="css/cwcalendar.css"
+			href="/hr_ssm/css/cwcalendar.css"
 			type="text/css">
 		<script type="text/javascript"
-			src="javascript/comm/comm.js">
+			src="/hr_ssm/javascript/comm/comm.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/comm/list.js">
+			src="/hr_ssm/javascript/comm/list.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/calendar-ch.js">
+			src="/hr_ssm/javascript/calendar-ch.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/jquery-1.7.2.js">
+			src="/hr_ssm/javascript/jquery-1.7.2.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/locate.js">
+			src="/hr_ssm/javascript/locate.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/select.js">
+			src="/hr_ssm/javascript/select.js">
 	
 </script>
      </head>
@@ -85,29 +85,29 @@
 				<c:forEach items="${resultList}" var="re">
 					<tr>
 						<td class="TD_STYLE2">
-								${re.resid}
+								${re.res_id}
 						</td>
 						<td class="TD_STYLE2">
-							${re.humanname}
+							${re.human_name}
 						</td>
 						<td class="TD_STYLE2">
-							${re.humansex}
+							${re.human_sex}
 						</td>
 						<td class="TD_STYLE2">
-						${re.humanmajorkindname}
+						${re.human_major_kind_name}
 						</td>
 						<td class="TD_STYLE2">
-						${re.humanmajorname}
+						${re.human_major_name}
 						</td>
 						<td class="TD_STYLE2">
-						${re.humanmobilephone}
+						${re.human_mobilephone}
 						</td>
 						<td class="TD_STYLE2">
-						<c:if test="${re.interviewstatus == 1}">待面试</c:if>
-						<c:if test="${re.interviewstatus == 2}">不可面试</c:if>
+						<c:if test="${re.interview_status == 1}">待面试</c:if>
+						<c:if test="${re.interview_status == 2}">不可面试</c:if>
 						</td>
 						<td class="TD_STYLE2">
-							<a href="byIdQueryInterview?resid=${re.resid}">登记</a>
+							<a href="initAdd.do?resId=${re.res_id}">登记</a>
 						</td>
 					</tr>
 				</c:forEach>

@@ -95,6 +95,10 @@
  		select * from engage_interview where ein_id = #{ein_id} 
  	</select>
  	
+ 	<select id="selectEngageInterviewByResumeId" parameterType="_int" resultType="EngageInterview">
+ 		select * from engage_interview where resume_id = #{resumeId} 
+ 	</select>
+ 	
  	<select id="selectAllEngageInterview" resultType="EngageInterview">
  		select * from engage_interview
  	</select>

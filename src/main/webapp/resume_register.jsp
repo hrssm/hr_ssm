@@ -149,7 +149,7 @@
 	 		<input type="hidden"  id="humanMajorKindId" name="human_major_kind_id" value="${mr.major_kind_id }" />
 	 		<input type="hidden"  name="human_major_id" id="humanMajorName" value="${mr.major_id }"/>
 	 		<input type="hidden"  name="interviews_tatus" value="1"/>
-	 		<input type="hidden" value="${userlogin.user_true_name }" name="register">
+	 		<input type="hidden" value="${userlogin.u_true_name }" name="register">
 			<table width="100%">
 				<tr>
 					<td>
@@ -231,7 +231,7 @@
 						家庭电话
 					</td>
 					<td class="TD_STYLE2">
-					 <input type="text" name="human_home_phone" id="humanHomephone" class="INPUT_STYLE2">
+					 <input type="text" name="human_homephone" id="humanHomephone" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						手机

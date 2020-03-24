@@ -9,4 +9,5 @@ public interface UserService {
 	public List<User> queryAllUser();
 	public User queryUserByUid(int uid);
 	public boolean removeUserByUid(int uid);
+	public User queryUserByUname(String u_name);
 }

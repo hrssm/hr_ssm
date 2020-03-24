@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="hr.mapper.Salary_itemMapper">
+  
+  	<insert id="insertSalary_item" parameterType="Salary_item">
+  		insert into salary_item(item_id,item_name,item_number,item_salary)
+  		values(#{item_id},#{item_name},#{item_number},#{item_salary})
+  	</insert>
+  	
+  	<select id="getSalary_item" resultType="Salary_item">
+  		select * from salary_item
+  	</select>
+  	
+  	<select id="selectSalary_itemById" resultType="Salary_item" parameterType="_int">
+  		select * from salary_item where item_id = #{id}
+  	</select>
+  	
+  	<delete id="deleteSalary_itemById" parameterType="_int">
+  		delete from salary_item where item_id = #{id}
+  	</delete>
+  	
+  	<update id="updateSalary_item" parameterType="Salary_item">
+  			update salary_item set item_name=#{item_name},item_number=#{item_number},item_salary=#{item_salary}
+  			where item_id=#{item_id}
+  	</update>
+  	
+  </mapper>

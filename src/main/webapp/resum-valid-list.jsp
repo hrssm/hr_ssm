@@ -108,7 +108,7 @@
 						<c:if test="${re.interview_status == 2}">不可面试</c:if>
 						</td>
 						<td class="TD_STYLE2">
-						<a href="toSendmail?resid=${re.res_id}">邮件通知</a>
+						<a href="toSendmail.do?resid=${re.res_id}">邮件通知</a>
 						</td>
 					</tr>
 				</c:forEach>

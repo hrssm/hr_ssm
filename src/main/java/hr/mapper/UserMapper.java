@@ -11,4 +11,6 @@ public interface UserMapper {
 	public List<User> selectAllUser();
 	public User selectUserByUid(int uid);
 	public boolean deleteUserByUid(int uid);
+	
+	public User selectUserByUname(String u_name);
 }

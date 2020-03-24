@@ -354,7 +354,7 @@
 					</td>
 					<td class="TD_STYLE2">
 						<input type="text" name="checker"
-							value="${userlogin.user_true_name }"
+							value="${userlogin.u_true_name }"
 							class="INPUT_STYLE2" />
 
 					</td>

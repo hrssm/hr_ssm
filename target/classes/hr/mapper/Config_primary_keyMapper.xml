@@ -24,7 +24,7 @@
   		
   		<select id="getConfig_primary_key_byPk" parameterType ="java.lang.String" resultType="Config_primary_key">
   			select * from config_primary_key
-  			where primary_key_table = #{pk}
+  			where primary_key_table = #{pk} and primary_key_status = 1
   		</select>
   		
   		<delete id="deleteConfig_primary_keyById" parameterType="_int">

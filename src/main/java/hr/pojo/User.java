@@ -3,11 +3,12 @@ package hr.pojo;
 import java.io.Serializable;
 
 
-public class User implements Serializable{
+public class User implements Serializable{	
 	private int u_id;
 	private String u_name;
 	private String u_true_name;
 	private String u_password;
+	private String u_role;
 	public int getU_id() {
 		return u_id;
 	}
@@ -33,5 +34,13 @@ public class User implements Serializable{
 	public void setU_password(String u_password) {
 		this.u_password = u_password;
 	}
+	public String getU_role() {
+		return u_role;
+	}
+	public void setU_role(String u_role) {
+		this.u_role = u_role;
+	}
+	
+	
 	
 }

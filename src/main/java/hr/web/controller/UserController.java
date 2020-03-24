@@ -2,6 +2,9 @@ package hr.web.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,42 +23,59 @@ import hr.service.UserService;
 public class UserController {
 	//要使用service
 	@Autowired
-	private UserService service = null;
+	private UserService userService;
 	
-	@RequestMapping("/saveUser.do")
-	public String saveUser(@ModelAttribute User user) {
-		boolean flag = service.addUser(user);
-		if(flag) {
-			return "redirect:/user/selectAll.do";
-		}else {
-			/*如果是redirect:index.jsp，会跳转到 工程名/user/index.jsp
-			以下的“/”不代表端口，而是绝对路径*/
-			return "redirect:/index.jsp";
+	@RequestMapping("/login.do")
+	public String login(User user,HttpServletRequest request)
+	{
+		User userTemp = userService.queryUserByUname(user.getU_name());
+		System.out.println("进入登录");
+		if(userTemp != null)
+		{
+			if(user.getU_password() != null && userTemp.getU_password() != null)
+			{
+				if(user.getU_password().equals(userTemp.getU_password()))
+				{
+					request.getSession().setAttribute("userlogin", userTemp);
+					
+					return "redirect:/index.jsp";
+				}
+			}
 		}
-	}
-	/*@ModelAttribute
-	 * 用在方法上面，默认保存string
-	 * */
-	@RequestMapping("/selectAll.do")
-	public String selectAll(Model model) {
-		
-		List<User> list = service.queryAllUser();
-		model.addAttribute("list",list);
-		return "forward:/show.jsp";
+		System.out.println("登录失败");
+		return "redirect:/login.jsp";
 	}
 	
-	//这个使用ajax操作(响应的数据不进行页面的跳转)
-	@RequestMapping(value="/{u_id}/selectOne.do",method=RequestMethod.POST)
 	@ResponseBody
-	public User selectOne(@PathVariable("u_id") int u_id) {
-		User user = service.queryUserByUid(u_id);
-		return user;
+	@RequestMapping("/validUname.do")
+	public boolean validUname(String u_name)
+	{
+		if(u_name!= null && null != userService.queryUserByUname(u_name))
+			return true;
+		else 
+			return false;
 	}
 	
-	@RequestMapping("/{u_id}/delete.do")
-	public String delete(@PathVariable("u_id") int u_id) {
-		boolean flag = service.removeUserByUid(u_id);
-		//如果直接调用方法return selectAll() 数据可能重复提交
-		return "redirect:/user/selectAll.do";
+	@RequestMapping("/registerUser.do")
+	public String registerUser(User user)
+	{
+		System.out.println(user.getU_name());
+		
+		boolean flag = false;
+		if(user != null)
+		{
+			if(user.getU_name() != null && null == userService.queryUserByUname(user.getU_name()))
+			{
+				flag = true;
+			}
+		}
+		System.out.println(flag);
+		if(flag)
+		{
+			userService.addUser(user);
+			return "redirect:/login.jsp";
+		}else {
+			return "redirect:/register.jsp";
+		}
 	}
 }

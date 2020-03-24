@@ -22,12 +22,14 @@ import org.springframework.web.multipart.MultipartFile;
 import hr.pojo.ConfigMajor;
 import hr.pojo.ConfigMajorKind;
 import hr.pojo.Config_primary_key;
+import hr.pojo.EngageInterview;
 import hr.pojo.EngageResume;
 import hr.pojo.Engage_major_release;
 import hr.service.ConfigMajorKindService;
 import hr.service.ConfigMajorService;
 import hr.service.ConfigPrimaryKeyService;
 import hr.service.Config_public_charService;
+import hr.service.EngageInterviewService;
 import hr.service.EngageResumeService;
 import hr.service.Engage_Major_ReleaseService;
 
@@ -46,6 +48,8 @@ public class EngageResumeController {
 	private ConfigMajorKindService configMajorKindService;
 	@Autowired
 	private ConfigPrimaryKeyService configPrimaryKeyService;
+	@Autowired
+	private EngageInterviewService engageInterviewService;
 	
 	@RequestMapping("/apply.do")
 	public String apply(String mre_id,Model model,HttpServletRequest request)
@@ -94,7 +98,7 @@ public class EngageResumeController {
 				}
 				
 				engageResumeService.addEngageResume(engageResume);
-				return null;
+				return "forward:/resume-apply-success.jsp";
 	}
 	
 	
@@ -186,6 +190,23 @@ public class EngageResumeController {
 		
 		engageResumeService.modifyEngageResumeById(engageResume);
 		
+//		EngageInterview engageInterview = new EngageInterview();
+//		
+//		engageInterview.setHuman_name(engageResume.getHuman_name());
+//		engageInterview.setHuman_major_kind_id(engageResume.getHuman_major_kind_id());
+//		engageInterview.setHuman_major_kind_name(engageResume.getHuman_major_kind_name());
+//		engageInterview.setHuman_major_id(engageResume.getHuman_major_id());
+//		engageInterview.setHuman_major_name(engageResume.getHuman_major_name());
+//		engageInterview.setImage_degree(engageResume.getHuman_picture());
+//		engageInterview.setRegister(engageResume.getRegister());
+//		engageInterview.setChecker(engageResume.getChecker());
+//		engageInterview.setRegiste_time(engageResume.getRegist_time());
+//		engageInterview.setCheck_time(engageResume.getCheck_time());
+//		engageInterview.setResume_id(engageResume.getRes_id());
+//		engageInterview.setInterview_status(engageResume.getInterview_status());
+//		engageInterview.setCheck_status(engageResume.getCheck_status());
+//		
+//		engageInterviewService.addEngageInterview(engageInterview);
 		return "forward:/engageresume/validlist.do";
 	}
 	@RequestMapping("/validlist.do")
@@ -210,4 +231,23 @@ public class EngageResumeController {
 		model.addAttribute("re", en);
 		return "forward:/resume-select.jsp";
 	}
+	@RequestMapping("/toSendmail.do")
+	public String notifyByEmail(int resid,Model model) {
+		
+		EngageResume en = engageResumeService.queryEngageResumeById(resid);
+		en.setInterview_status(1);
+		
+		engageResumeService.modifyEngageResumeById(en);
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("checkstatus","1");
+		
+		List<EngageResume> res = engageResumeService.queryEngageResumeByConditions(map);
+		
+		model.addAttribute("resultList", res);
+		
+		return "forward:/resum-valid-list.jsp";
+	}
+	
 }

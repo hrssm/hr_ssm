@@ -40,7 +40,7 @@ public class EngageResume implements Serializable {
 	  private String attachment_name;	//附件名
 	  private String check_status;		//审核状态
 	  private String register;			//登录人员
-	  private String regist_time;//登录时间
+	  private Timestamp regist_time;//登录时间
 	  private String checker;			//审核人员
 	  private Timestamp check_time;//审核时间
 	  private int interview_status;		//面试状态
@@ -271,10 +271,10 @@ public class EngageResume implements Serializable {
 	public void setRegister(String register) {
 		this.register = register;
 	}
-	public String getRegist_time() {
+	public Timestamp getRegist_time() {
 		return regist_time;
 	}
-	public void setRegist_time(String regist_time) {
+	public void setRegist_time(Timestamp regist_time) {
 		this.regist_time = regist_time;
 	}
 	public String getChecker() {

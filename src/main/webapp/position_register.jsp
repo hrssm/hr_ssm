@@ -301,7 +301,7 @@
 						登记人
 					</td>
 					<td  class="TD_STYLE2">
-						 <input type="text" name="register" value="${userlogin.user_true_name }" class="INPUT_STYLE2">
+						 <input type="text" name="register" value="${userlogin.u_true_name }" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						登记时间

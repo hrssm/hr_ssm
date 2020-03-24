@@ -6,9 +6,10 @@ import hr.pojo.EngageInterview;
 
 
 public interface EngageInterviewMapper {
-	public boolean saveEngageInterview(EngageInterview engageInterview);
-	public boolean deleteEngageInterviewById(int id);
-	public boolean updateEngageInterviewById(EngageInterview engageInterview);
+	public void saveEngageInterview(EngageInterview engageInterview);
+	public void deleteEngageInterviewById(int id);
+	public void updateEngageInterviewById(EngageInterview engageInterview);
 	public EngageInterview selectEngageInterviewById(int id);
 	public List<EngageInterview> selectAllEngageInterview();
+	public List<EngageInterview> selectEngageInterviewByResumeId(int resumeId);
 }

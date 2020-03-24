@@ -5,8 +5,8 @@
   <mapper namespace="hr.mapper.UserMapper">
   
   	<insert id="saveUser" parameterType="User">
-  		insert into users(u_id,u_name,u_true_name,u_password)
-  		values(#{u_id},#{u_name},#{u_true_name},#{u_password})
+  		insert into users(u_id,u_name,u_true_name,u_password,u_role)
+  		values(#{u_id},#{u_name},#{u_true_name},#{u_password},#{u_role})
   	</insert>
   	
   	<select id="selectAllUser" resultType="User">
@@ -15,6 +15,10 @@
   	
   	<select id="selectUserByUid" parameterType="_int" resultType="User">
   		select * from users where u_id = #{u_id}
+  	</select>
+  	
+  	<select id="selectUserByUname" parameterType="java.lang.String" resultType="User">
+  		select * from users where u_name = #{u_name}
   	</select>
   	
   	<delete id="deleteUserByUid" parameterType="_int">

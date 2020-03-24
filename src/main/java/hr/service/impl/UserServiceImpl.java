@@ -34,5 +34,10 @@ public class UserServiceImpl implements UserService{
 	public boolean removeUserByUid(int uid) {
 		return userMapper.deleteUserByUid(uid);
 	}
+	
+	public User queryUserByUname(String u_name)
+	{
+		return userMapper.selectUserByUname(u_name);
+	}
 
 }

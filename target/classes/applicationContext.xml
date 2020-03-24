@@ -82,4 +82,8 @@
 	<!-- 启用springmvc的注解模式 -->
 	<mvc:annotation-driven/>
 	
+	<mvc:interceptors>
+		 <bean class="hr.web.inerceptor.AccessAuthority"/>
+	</mvc:interceptors>
+	
 </beans>

@@ -96,36 +96,36 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%"><a href="first_kind.jsp"
+											<td width="98%"><a href="configfilefirstkind/query.do"
 												target="mainFrame">I级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configfilesecondkind.do?operate=list"
+											<td><a href="configfilesecondkind/query.do"
 												target="mainFrame">II级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="configfilethirdkind.do?operate=list"
+											<td><a href="configfilethirdkind/query.do"
 												target="mainFrame">III级机构设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="profession_design.jsp" target="mainFrame">职称设置</a>
+											<td><a href="professionDesignController/query.do" target="mainFrame">职称设置</a>
 											</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="major_kind.jsp" target="mainFrame">职位分类设置</a>
+											<td><a href="configMajorKindController/query.do" target="mainFrame">职位分类设置</a>
 											</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="major.jsp" target="mainFrame">职位设置</a></td>
+											<td><a href="configMajorController/query.do" target="mainFrame">职位设置</a></td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
-											<td><a href="public_char.jsp" target="mainFrame">公共属性设置</a>
+											<td><a href="publicCharController/query.do" target="mainFrame">公共属性设置</a>
 											</td>
 										</tr>
 									</table>
@@ -145,11 +145,15 @@ a {
 									<table width="100%" border="0">
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
-											<td width="98%">薪酬项目设置</td>
+											<td width="98%">
+											<a href="salary_item/query.do" target="mainFrame">薪酬项目设置</a>
+											</td>
 										</tr>
 										<tr>
-											<td><img src="images/jt0.gif"></td>
-											<td>薪酬发放方式设置</td>
+											<td width="2%"><img src="images/jt0.gif"></td>
+											<td width="98%">
+											<a href="salary_grant_mode.jsp" target="mainFrame">薪酬发放方式设置</a>
+											</td>
 										</tr>
 										<tr>
 											<td><img src="images/jt0.gif"></td>
@@ -289,12 +293,12 @@ a {
 					<table width="100%" border="0">
 						<tr>
 							<td width="2%"><img src="images/jt0.gif"></td>
-							<td width="98%"><a href="salarystandard_register.jsp"
+							<td width="98%"><a href="salary_item/queryAll.do"
 								target="mainFrame">薪酬标准登记</a></td>
 						</tr>
 						<tr>
 							<td><img src="images/jt0.gif"></td>
-							<td><a href="salarystandard_check_list.jsp"
+							<td><a href="salary_standard/queryAll.do"
 								target="mainFrame">薪酬标准登记复核</a></td>
 						</tr>
 						<tr>
@@ -538,7 +542,7 @@ a {
 										<tr>
 											<td width="2%"><img src="images/jt0.gif"></td>
 											<td width="98%"><a
-												href="question_subjects_regist.jsp" target="mainFrame">试题登记</a>
+												href="engagesubjects.do?operate=toAdd" target="mainFrame">试题登记</a>
 											</td>
 										</tr>
 										<tr>

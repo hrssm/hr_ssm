@@ -3,7 +3,7 @@ package hr.pojo;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class EngageInterview implements Serializable{
+public class EngageInterview implements Serializable {
 	 private int ein_id;			//id
 	  private String human_name; 		 //应聘人员名字
 	  private int interview_amount;	//面试数量
@@ -27,7 +27,7 @@ public class EngageInterview implements Serializable{
 	  private String interview_comment;					//面试评论
 	  private String check_comment;						//校验评论
 	  private int interview_status;			//面试状态(已面，未面)
-	  private int check_status;				//检验状态
+	  private String check_status;				//检验状态
 	public int getEin_id() {
 		return ein_id;
 	}
@@ -166,10 +166,10 @@ public class EngageInterview implements Serializable{
 	public void setInterview_status(int interview_status) {
 		this.interview_status = interview_status;
 	}
-	public int getCheck_status() {
+	public String getCheck_status() {
 		return check_status;
 	}
-	public void setCheck_status(int check_status) {
+	public void setCheck_status(String check_status) {
 		this.check_status = check_status;
 	}
 	  

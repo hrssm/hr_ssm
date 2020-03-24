@@ -122,4 +122,12 @@ public class EngageMajorReleaseController {
 		engageMajorReleaseService.modifyEngageMajorRelease(engage_major_release);
 		return "redirect:/engagemajorrelease/initEdit.do";
 	}
+	
+	@RequestMapping("/deleteMajorRelease.do")
+	@ResponseBody
+	public String deleteMajorRelease(String mid)
+	{
+		engageMajorReleaseService.removeEngageMajorReleaseById(mid);
+		return "ok";
+	}
 }

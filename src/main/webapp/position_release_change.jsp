@@ -177,7 +177,7 @@
 						变更人
 					</td>
 					<td  class="TD_STYLE2">
-						 <input type="text" name="changer" value="${userlogin.user_true_name }" class="INPUT_STYLE2">
+						 <input type="text" name="changer" value="${userlogin.u_true_name }" class="INPUT_STYLE2">
 					</td>
 					<td class="TD_STYLE1">
 						变更时间

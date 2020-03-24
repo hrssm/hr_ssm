@@ -8,32 +8,32 @@
     <title>My JSP 'sift-list.jsp' starting page</title>
     
 	<link rel="stylesheet"
-			href="css/table.css" type="text/css">
+			href="/hr_ssm/css/table.css" type="text/css">
 		<link rel="stylesheet"
-			href="css/cwcalendar.css"
+			href="/hr_ssm/css/cwcalendar.css"
 			type="text/css">
 		<script type="text/javascript"
-			src="javascript/comm/comm.js">
+			src="/hr_ssm/javascript/comm/comm.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/comm/list.js">
+			src="/hr_ssm/javascript/comm/list.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/calendar-ch.js">
+			src="/hr_ssm/javascript/calendar-ch.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/jquery-1.7.2.js">
+			src="/hr_ssm/javascript/jquery-1.7.2.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/locate.js">
+			src="/hr_ssm/javascript/locate.js">
 	
 </script>
 		<script type="text/javascript"
-			src="javascript/select.js">
+			src="/hr_ssm/javascript/select.js">
 	
 </script>
 </head>
@@ -86,28 +86,28 @@
 				<c:forEach items="${vlist}" var="v">
 					<tr>
 						<td class="TD_STYLE2">
-							${v.einid }
+							${v.ein_id }
 						</td>
 						<td class="TD_STYLE2">
-							${v.humanname }
+							${v.human_name }
 						</td>
 						<td class="TD_STYLE2">
-							${v.humanmajorkindname }
+							${v.human_major_kind_name }
 						</td>
 						<td class="TD_STYLE2">
-						    ${v.humanmajorname }
+						    ${v.human_major_name }
 						</td>
 						<td class="TD_STYLE2">
-							${v.interviewamount }
+							${v.interview_amount }
 						</td>
 						<td class="TD_STYLE2">
-							${v.registetime }
+							${v.registe_time }
 						</td>
 						<td class="TD_STYLE2">
-							${v.multiqualitydegree }
+							${v.multi_quality_degree }
 						</td>
 						<td class="TD_STYLE2">
-							<a href="byIdQuerySift?einid=${v.einid }">筛选</a>
+							<a href="sift.do?ein_id=${v.ein_id }">筛选</a>
 						</td>
 					</tr>
 				</c:forEach>
